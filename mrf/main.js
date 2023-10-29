@@ -40,7 +40,13 @@ console.log("power2 of 10:", power2(10));
 
 // user object with first name and last name, both capitalized
 // e.g. getUser('hello', 'world') is { firstName: 'Hello', lastName: 'World' }
-function getUser(firstName, lastName) {}
+function getUser(firstName, lastName) {
+  const arr = { firstName: firstName, lastName: lastName };
+  return arr;
+}
+
+//! test getUser function
+console.log("getUser whami:", getUser("mmd", "mmdi"));
 
 // greet someone!
 // e.g. greet('ConnecMent') is "Hello, ConnecMent! Hope you the best."
