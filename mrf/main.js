@@ -1,5 +1,10 @@
 // add number a to b
-function add(a, b) {}
+function add(a, b) {
+    return a + b;
+}
+
+//! test add func
+console.log("add 1 to 1:", add(1,1));
 
 // flip a coin and log the result (head or tail)
 function flipACoin() {}
