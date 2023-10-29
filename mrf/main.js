@@ -7,7 +7,20 @@ function add(a, b) {
 console.log("add 1 to 1:", add(1,1));
 
 // flip a coin and log the result (head or tail)
-function flipACoin() {}
+function flipACoin() {
+    
+    let result = Math.random();
+
+    if (result >= 0.5)
+        return "HEAD";
+    
+    else
+        return "TAIL"
+}
+
+//! test flipACoin func
+console.log("flipACoin:", flipACoin());
+
 
 // concat two strings
 function concat(stringA, stringB) {}
