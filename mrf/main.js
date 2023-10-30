@@ -19,7 +19,8 @@ console.log("flipACoin:", flipACoin());
 
 // concat two strings
 function concat(stringA, stringB) {
-  return stringA + stringB;
+  // return stringA + stringB;
+  return stringA.concat(stringB);
 }
 
 //! Test concat func
@@ -58,10 +59,38 @@ function greet(name) {
 console.log("Greet:", greet("Mr MRF"));
 
 // get array of n random numbers
-function getNRandomNumbers(n) {}
+function getNRandomNumbers(n) {
+  const final = new Array();
+
+  for (let i = 0; i < n; i++) {
+    let x = Math.random();
+    final.push(x);
+  }
+
+  return final;
+}
+
+//! test of getNRandomNumbers
+console.log("getNRandomNumbers: 10", getNRandomNumbers(10));
 
 // get sorted array of n random numbers, in range min to max
-function getNRandomNumbers(n, min, max) {}
+function getNRandomNumbersRange(n, min, max) {
+  const final = new Array();
+
+  for (let i = 0; i < n; i++) {
+    // plus 1 to included max
+    let x = Math.floor(Math.random() * (max - min + 1)) + min;
+    final.push(x);
+  }
+
+  return final;
+}
+
+//! test of getNRandomNumbersRange
+console.log(
+  "getNRandomNumbersRange: 10, 5, 15",
+  getNRandomNumbersRange(10, 5, 15)
+);
 
 // log current time with a x seconds interval, for n seconds
 function logCurrentTime(x, n) {}
