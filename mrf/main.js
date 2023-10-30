@@ -97,10 +97,30 @@ function logCurrentTime(x, n) {}
 
 // higher order function: call the function in the parameters list
 // e.g. callFuncNTimes(flipACoin, 3) calls flipACoin 3 times
-function callFuncNTimes(func) {}
+function callFuncNTimes(func, n, ...funcParam) {
+  for (let i = 0; i < n; i++) {
+    console.log(func(funcParam));
+  }
+
+  return "done";
+}
+
+//! Test callFuncNTimes
+console.log("callFuncNTimes: ", callFuncNTimes(flipACoin, 3));
+console.log("callFuncNTimes: ", callFuncNTimes(getNRandomNumbers, 3, 4));
 
 // return true if parameter is falsy, false otherwise
-function isNil(param) {}
+function isNil(param) {
+  return param ? false : true;
+}
+
+//! test of isNil
+console.log("isNil:", isNil(0x0));
+console.log("isNil:", isNil(0));
+console.log("isNil:", isNil(0.0));
+console.log("isNil:", isNil(false));
+console.log("isNil:", isNil(""));
+console.log("isNil:", isNil("MRF"));
 
 // call property in object
 // e.g. in obj = { callableProp: function () { console.log('hello!') } }, callPropInObj(obj, 'callableProp') will log "hello!"
