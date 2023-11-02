@@ -127,7 +127,17 @@ console.log("isNil:", isNil("MRF"));
 function callPropInObj(object, propertyName) {}
 
 // if the email is gmail
-function isGmail(email) {}
+function isGmail(email) {
+  if (/@gmail\.com$/.test(email)) {
+    return "Valid Gmail";
+
+  } else return "unValid Gmail";
+}
+
+//! test isGmail
+console.log(isGmail("mmd.com"));
+console.log(isGmail("mmd@ggg.com"));
+console.log(isGmail("mmd@gmail.com"));
 
 // duplicate array
 // e.g. duplicateArray([1,2,3]) is [1,2,3,1,2,3]
