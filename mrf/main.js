@@ -124,13 +124,22 @@ console.log("isNil:", isNil("MRF"));
 
 // call property in object
 // e.g. in obj = { callableProp: function () { console.log('hello!') } }, callPropInObj(obj, 'callableProp') will log "hello!"
-function callPropInObj(object, propertyName) {}
+function callPropInObj(object, propertyName) {
+  object[propertyName]();
+}
+
+//! test callpropinobj
+const obj = {
+  callableProp: function () {
+    console.log("hello!");
+  },
+};
+callPropInObj(obj, "callableProp");
 
 // if the email is gmail
 function isGmail(email) {
   if (/@gmail\.com$/.test(email)) {
     return "Valid Gmail";
-
   } else return "unValid Gmail";
 }
 
@@ -142,7 +151,7 @@ console.log(isGmail("mmd@gmail.com"));
 // duplicate array
 // e.g. duplicateArray([1,2,3]) is [1,2,3,1,2,3]
 function duplicateArray(arr) {
-  return dup = arr.concat(arr);
+  return (dup = arr.concat(arr));
 }
 
 //! test duplicateArray
