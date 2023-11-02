@@ -141,4 +141,9 @@ console.log(isGmail("mmd@gmail.com"));
 
 // duplicate array
 // e.g. duplicateArray([1,2,3]) is [1,2,3,1,2,3]
-function duplicateArray() {}
+function duplicateArray(arr) {
+  return dup = arr.concat(arr);
+}
+
+//! test duplicateArray
+console.log(duplicateArray([1, 2, 3]));
