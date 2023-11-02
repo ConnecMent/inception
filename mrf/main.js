@@ -93,7 +93,35 @@ console.log(
 );
 
 // log current time with a x seconds interval, for n seconds
-function logCurrentTime(x, n) {}
+function logCurrentTime(x, n) {
+  function printTime() {
+    let date = new Date();
+    console.log(
+      "Time:",
+      date.getHours(),
+      ":",
+      date.getMinutes(),
+      ":",
+      date.getSeconds()
+    );
+  }
+
+  // setTimeout(printTime, x * 1000);
+
+  for (let i = 0; i < n / x; i++) {
+    printTime();
+
+    let time1 = new Date().getTime() / 1000;
+    let time2 = new Date().getTime() / 1000;
+
+    while (time1 + x > time2) {
+      time2 = new Date().getTime() / 1000;
+    }
+  }
+}
+
+//! test of logCurrentTime
+logCurrentTime(2, 10);
 
 // higher order function: call the function in the parameters list
 // e.g. callFuncNTimes(flipACoin, 3) calls flipACoin 3 times
