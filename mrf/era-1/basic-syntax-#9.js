@@ -4,7 +4,7 @@ function add(a, b) {
 }
 
 //! test add func
-console.log("add 1 to 1:", add(1, 1));
+console.assert(add(1, 1) === 2, { a: 1, b: 1, function: add.name });
 
 // flip a coin and log the result (head or tail)
 function flipACoin() {
