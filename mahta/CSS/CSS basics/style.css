@@ -1,47 +1,12 @@
 
 .bor {
  border-radius: 5px;
-/*
-I could do:
-section {
-border-radius:5px;
-} 
-instead, and it would have been way more optimized.This is only a simple practice of css classes.
-*/
-}
-
-#color-1 {
-background-color:#CCFFFF;
-}
-
-#color-2 {
-background-color:#FFB3D9;
-}
-
-#color-3 {
-background-color:#B3FFB3;
-}
-
-#color-4 {
-background-color:#FFBFB3;
-}
-
-#color-5 {
-background-color:#F2B3FF;
-}
-
-#color-6 {
-background-color:#FFFFCC;
-}
-
-img {
-border-radius:5px;
-width: 100%; /* Set the width to 100% of the parent element (the page) */
-height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+/*Exmple of css class*/
 }
 
 body {
 font-family: Arial, Helvetica, sans-serif;
 background-color:rgb(229,43,80);
-//The closest color to red that I could find to my liking.(Amaranth)
+/*The closest color to red that I could find to my liking.(Amaranth)*/
 }
+
