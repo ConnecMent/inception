@@ -1,0 +1,20 @@
+h1{
+    color:darkmagenta;
+    background-color: rgb(230, 238, 17);
+    opacity: 0.8;
+}
+
+#color2{
+    color: rgb(210, 61, 20);
+    background-color: rgb(210, 192, 223);
+}
+
+.color3{
+    color: hsl(32, 80%, 42%);
+    background-color: hsl(206, 68%, 70%);
+}
+
+h5{
+    color:hsla(0, 100%, 25%,0.9);
+    background-color:hsla(0, 0%, 20%, 0.4);
+}
