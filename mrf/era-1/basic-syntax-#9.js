@@ -167,8 +167,8 @@ callPropInObj(obj, "callableProp");
 // if the email is gmail
 function isGmail(email) {
   if (/@gmail\.com$/.test(email)) {
-    return "Valid Gmail";
-  } else return "unValid Gmail";
+    return true;
+  } else return false;
 }
 
 //! test isGmail
