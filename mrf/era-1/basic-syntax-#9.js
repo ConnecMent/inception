@@ -28,12 +28,8 @@ console.log("concat: ", concat("abc", "def"));
 
 // 2^x = ?
 function power2(x) {
-  let final = 1;
-  for (let i = 0; i < x; i++) {
-    final *= 2;
-  }
-
-  return final;
+  // return Math.pow(2, x);
+  return 2 ** x;
 }
 
 //! test power2 func
