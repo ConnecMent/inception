@@ -165,9 +165,13 @@ callPropInObj(obj, "callableProp");
 
 // if the email is gmail
 function isGmail(email) {
-  if (/@gmail\.com$/.test(email)) {
-    return true;
-  } else return false;
+  // if (/@gmail\.com$/.test(email)) {
+  //   return true;
+  // } else return false;
+  
+  // or 
+
+  return email.endsWith("@gmail.com");
 }
 
 //! test isGmail
