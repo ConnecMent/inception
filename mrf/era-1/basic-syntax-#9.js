@@ -59,14 +59,15 @@ console.log("Greet:", greet("Mr MRF"));
 
 // get array of n random numbers
 function getNRandomNumbers(n) {
-  const final = new Array();
+  const final = new Array(n).fill();
 
-  for (let i = 0; i < n; i++) {
-    let x = Math.random();
-    final.push(x);
-  }
+  // for (let i = 0; i < n; i++) {
+  //   final[i] = Math.random();
+  // }
+  // return final;
 
-  return final;
+  // or
+  return final.map((x) => (x = Math.random()));
 }
 
 //! test of getNRandomNumbers
@@ -168,8 +169,8 @@ function isGmail(email) {
   // if (/@gmail\.com$/.test(email)) {
   //   return true;
   // } else return false;
-  
-  // or 
+
+  // or
 
   return email.endsWith("@gmail.com");
 }
