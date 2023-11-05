@@ -38,6 +38,8 @@ console.log("power2 of 10:", power2(10));
 // user object with first name and last name, both capitalized
 // e.g. getUser('hello', 'world') is { firstName: 'Hello', lastName: 'World' }
 function getUser(firstName, lastName) {
+  firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+  lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
   const arr = { firstName: firstName, lastName: lastName };
   return arr;
 }
