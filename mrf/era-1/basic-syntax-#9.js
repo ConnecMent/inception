@@ -50,7 +50,8 @@ console.log("getUser whami:", getUser("mmd", "mmdi"));
 // greet someone!
 // e.g. greet('ConnecMent') is "Hello, ConnecMent! Hope you the best."
 function greet(name) {
-  return "Hello, " + name + " Hope you the best.";
+  // return "Hello, " + name + " Hope you the best.";
+  return `Hello, ${name} Hope you the best.`;
 }
 
 //! test greet func
