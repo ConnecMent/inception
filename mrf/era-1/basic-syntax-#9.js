@@ -127,15 +127,12 @@ logCurrentTime(2, 10);
 // e.g. callFuncNTimes(flipACoin, 3) calls flipACoin 3 times
 function callFuncNTimes(func, n, ...funcParam) {
   for (let i = 0; i < n; i++) {
-    console.log(func(funcParam));
+    func(funcParam);
   }
-
-  return "done";
 }
 
 //! Test callFuncNTimes
-console.log("callFuncNTimes: ", callFuncNTimes(flipACoin, 3));
-console.log("callFuncNTimes: ", callFuncNTimes(getNRandomNumbers, 3, 4));
+callFuncNTimes(() => {console.log(flipACoin())}, 3);
 
 // return true if parameter is falsy, false otherwise
 function isNil(param) {
