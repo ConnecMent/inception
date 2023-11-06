@@ -139,7 +139,9 @@ console.log("callFuncNTimes: ", callFuncNTimes(getNRandomNumbers, 3, 4));
 
 // return true if parameter is falsy, false otherwise
 function isNil(param) {
-  return param ? false : true;
+  // return param ? false : true;
+  // or
+  return !param;
 }
 
 //! test of isNil
