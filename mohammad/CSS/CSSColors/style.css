@@ -1,0 +1,18 @@
+.whole_page{
+    background-color: rgb(221, 155, 155);
+}
+#p1{
+    color: rgb(255, 0, 0);
+}
+#p2{
+    color: rgba(0, 255, 0, 0.9);
+}
+#p3{
+    color: hsl(280, 100%, 23%);
+}
+#p4{
+    color: hsla(74, 96%, 63%, 0.9);
+}
+#p5{
+    color: #8b5050;
+}
