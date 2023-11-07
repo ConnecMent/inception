@@ -49,7 +49,7 @@ function getNRandomNumbers(n) {
   // return final;
 
   // or
-  return final.map(() => Math.random());
+  // return final.map(() => Math.random());
   // or even
   return final.map(Math.random);
 }
