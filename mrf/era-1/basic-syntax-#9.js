@@ -153,7 +153,7 @@ console.log("isNil:", isNil("MRF"));
 // call property in object
 // e.g. in obj = { callableProp: function () { console.log('hello!') } }, callPropInObj(obj, 'callableProp') will log "hello!"
 function callPropInObj(object, propertyName) {
-  object[propertyName]();
+  object[propertyName]?.();
 }
 
 //! test callpropinobj
