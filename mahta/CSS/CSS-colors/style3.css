@@ -1,0 +1,17 @@
+h1{
+    color:#CCFFFF;
+/*hex color*/
+}
+
+#color2{
+    color: rgb(210, 61, 20);
+}
+
+.color3{
+    color: hsl(32, 80%, 42%);
+}
+
+h5{
+    color:hsla(0, 100%, 25%,0.9);
+}
+ 
