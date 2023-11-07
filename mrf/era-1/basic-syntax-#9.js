@@ -129,7 +129,7 @@ logCurrentTime(2, 10);
 // e.g. callFuncNTimes(flipACoin, 3) calls flipACoin 3 times
 function callFuncNTimes(func, n, ...funcParam) {
   for (let i = 0; i < n; i++) {
-    func(funcParam);
+    func(...funcParam);
   }
 }
 
