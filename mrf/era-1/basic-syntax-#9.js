@@ -96,8 +96,18 @@ console.log(
 
 // log current time with a x seconds interval, for n seconds
 function logCurrentTime(x, n) {
+  let startTime = new Date().getTime() / 1000;
+
+  let ID = setInterval(printTime, x * 1000);
+
   function printTime() {
     let date = new Date();
+
+    if (startTime + n + 1 < date.getTime() / 1000) {
+      clearInterval(ID);
+      return;
+    }
+
     console.log(
       "Time:",
       date.getHours(),
@@ -106,19 +116,6 @@ function logCurrentTime(x, n) {
       ":",
       date.getSeconds()
     );
-  }
-
-  // setTimeout(printTime, x * 1000);
-
-  for (let i = 0; i < n / x; i++) {
-    printTime();
-
-    let time1 = new Date().getTime() / 1000;
-    let time2 = new Date().getTime() / 1000;
-
-    while (time1 + x > time2) {
-      time2 = new Date().getTime() / 1000;
-    }
   }
 }
 
@@ -134,7 +131,9 @@ function callFuncNTimes(func, n, ...funcParam) {
 }
 
 //! Test callFuncNTimes
-callFuncNTimes(() => {console.log(flipACoin())}, 3);
+callFuncNTimes(() => {
+  console.log(flipACoin());
+}, 3);
 
 // return true if parameter is falsy, false otherwise
 function isNil(param) {
