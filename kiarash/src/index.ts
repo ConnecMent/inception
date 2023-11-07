@@ -1,47 +1,41 @@
 type Branch = "architecture" | "clean-code" | "languages";
 
 abstract class Concept {
-  constructor(private name: string, protected branch: string) {}
+  constructor(protected branch: string, private name?: string) {}
 
   getName() {
     return this.name;
   }
 
-  abstract getBranch(): string;
-}
-
-class devConcept extends Concept {
-  constructor(name: string, branch: Branch) {
-    super(name, branch);
-  }
-
   getBranch() {
-    return this.branch as Branch;
+    return this.branch;
   }
-
-  getArea() {}
 }
 
-class philosophicalConcept extends Concept {
-  constructor(
-    name: string,
-    branch: string,
-    public getBranch: () => string,
-    private reasoning: string[]
-  ) {
-    super(name, branch);
+class DevConcept extends Concept {
+  constructor(branch: Branch) {
+    super(branch);
+  }
+}
+
+class PhilosophicalConcept extends Concept {
+  private reasoning_list: string[] = [];
+  constructor(branch: string, reasoning?: string[], getBranch?: () => string) {
+    super(branch);
+    if (reasoning) {
+      this.reasoning_list = [...this.reasoning_list, ...reasoning];
+    }
+    if (getBranch) {
+      this.getBranch = getBranch;
+    }
   }
 
   addReasoning(reason: string): void {
-    this.reasoning.push(reason);
-  }
-
-  getReasoning(): string[] {
-    return this.reasoning;
+    this.reasoning_list.push(reason);
   }
 
   isPersuading() {
-    let length = this.reasoning.length;
+    let length = this.reasoning_list.length;
     if (length > 10) {
       return true;
     }
@@ -49,4 +43,19 @@ class philosophicalConcept extends Concept {
   }
 }
 
-export {};
+let dev_instance = new DevConcept("architecture");
+
+console.log(dev_instance.getBranch());
+
+let philosophical_instance = new PhilosophicalConcept("main", [
+  "life is too short",
+]);
+
+for (let i = 0; i < 10; i++) {
+  philosophical_instance.addReasoning("life is too short");
+}
+
+console.log(philosophical_instance.isPersuading());
+console.log(philosophical_instance.getBranch());
+
+export { DevConcept, PhilosophicalConcept };
