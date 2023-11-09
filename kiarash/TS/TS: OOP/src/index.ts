@@ -1,7 +1,7 @@
 type Branch = "architecture" | "clean-code" | "languages";
 
 abstract class Concept {
-  constructor(protected branch: string, private name?: string) {}
+  constructor(protected branch: string, private name: string) {}
 
   getName() {
     return this.name;
@@ -14,14 +14,14 @@ abstract class Concept {
 
 class DevConcept extends Concept {
   constructor(branch: Branch) {
-    super(branch);
+    super(branch, "DevConcept");
   }
 }
 
 class PhilosophicalConcept extends Concept {
   private reasoning_list: string[] = [];
   constructor(branch: string, reasoning?: string[], getBranch?: () => string) {
-    super(branch);
+    super(branch, "PhilosophicalConcept");
     if (reasoning) {
       this.reasoning_list = [...this.reasoning_list, ...reasoning];
     }
