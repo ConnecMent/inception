@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 20px);
+  grid-gap: 8px;
+}
+.container div {
+  background-color: red;
+  height: 20px;
+  width: 20px;
+}
+
+.containerY {
+  display: flex;
+  align-items: center;
+}
+.containerY div {
+background-color: yellow;
+display: flex;
+align-items: center;
+margin-right: 48px;
+height: 80px;
+width: 80px;
+}
+.containerY div p {
+  margin-left: 24px;
+}
+
+.containerB {
+  display: flex;
+  align-items: center;
+}
+.containerB div {
+  background-color: blue;
+  border: solid 2px lightblue;
+  height: 18px;
+  width: 18px;
+}
+ 
