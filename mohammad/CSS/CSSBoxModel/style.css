@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#sq1-1 {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 4px;
+}
+#sq1-2 {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 4px;
+}
+#sq1-3 {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 4px;
+}
+#sq1-4 {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 4px;
+}
+#sq1-5 {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 4px;
+}
+
+#sq2-1 {
+  background-color: yellow;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 8px 8px 8px 8px;
+  margin: 8px;
+}
+#sq2-2 {
+  background-color: yellow;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 8px 8px 8px 8px;
+  margin: 8px;
+}
+#sq2-3 {
+  background-color: yellow;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 8px 8px 8px 8px;
+  margin: 8px;
+}
+
+#sq3-1 {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 2px solid lightblue;
+}
+#sq3-2 {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 2px solid lightblue;
+}
+#sq3-3 {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 2px solid lightblue;
+}
+#sq3-4 {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 2px solid lightblue;
+}
