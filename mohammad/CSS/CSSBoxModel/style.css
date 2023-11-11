@@ -1,0 +1,28 @@
+.row1 {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 4px;
+}
+
+.row2 {
+  background-color: yellow;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 8px;
+  margin: 8px;
+}
+
+.container {
+  display: flex;
+}
+
+.row3 {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  /* display: inline-block; */
+  border: 2px solid lightblue;
+}
