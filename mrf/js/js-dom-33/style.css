@@ -1,0 +1,13 @@
+div {
+  border: 1px solid black;
+}
+
+.box {
+  width: 500px;
+  height: 500px;
+}
+
+.box div {
+  height: 50%;
+  width: 50%;
+}
