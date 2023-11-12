@@ -1,0 +1,38 @@
+.row1 {
+  display: grid;
+  grid-template-columns: repeat(5, 20px);
+  column-gap: 8px;
+}
+.row1 div {
+  background-color: red;
+  height: 20px;
+  width: 20px;
+}
+.row2 {
+  display: grid;
+  grid-template-columns: repeat(3, 56px);
+  column-gap: 16px;
+  margin-top: 10px;
+}
+.row2 div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+  padding: 8px;
+  text-align: center;
+}
+.row3 {
+  display: flex;
+  margin-top: 10px;
+}
+
+.row3 div {
+  width: 20px;
+  height: 20px;
+  border: 2px solid skyblue;
+  background-color: blue;
+}
+
