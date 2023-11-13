@@ -1,0 +1,36 @@
+p {
+  font-weight: bold;
+}
+.a p {
+  background-color: black;
+}
+.f p {
+  background-color: black;
+}
+.a ~ div {
+  color: yellow;
+}
+.a > p {
+  color: yellow;
+}
+.b > p {
+  color: yellow;
+}
+.d + p {
+  color: yellow;
+}
+.c > p {
+  color: yellow;
+}
+.e > p {
+  color: yellow;
+}
+.g > p {
+  color: yellow;
+}
+.c ~ div {
+  width: 50px;
+}
+.a ~ div {
+  width: 200px;
+}
