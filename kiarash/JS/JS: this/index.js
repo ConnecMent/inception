@@ -6,7 +6,9 @@ const thisWrapper = {
   tryThis,
 };
 
-tryThis.call(thisWrapper);
+let boundTryThis = tryThis.bind(thisWrapper);
+
+boundTryThis();
 
 tryThis();
 
