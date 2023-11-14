@@ -1,0 +1,26 @@
+.A {
+  width: 300px;
+  height: 100px;
+  background-color: red;
+}
+.B {
+  width: 40%;
+  height: 200px;
+  background-color: green;
+}
+.E {
+  font-size: 5px;
+  width: 100em;
+  height: 12rem;
+  background-color: blue;
+}
+.D {
+  width: 40%;
+  height: 30%;
+  background-color: cyan;
+}
+.F {
+  width: 30vmax;
+  height: 20vmin;
+  background-color: yellow;
+}
