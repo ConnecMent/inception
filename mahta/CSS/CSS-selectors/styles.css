@@ -1,43 +1,44 @@
 body {
-    background-color:rgb(144, 175, 202);
+    background-color: rgb(144, 175, 202);
 }
 
-.a ~ div {
-    width: 100px; 
-}
-
-.c ~ div {
-    width: 50px;
-}
-
-.a > p {
+.a > li > p {
     background-color: darkolivegreen;
+        width: 20px;
 }
 
-.b > p {
+.b > li > p {
     background-color: cornflowerblue;
+        width: 20px;
 }
 
-.c > p {
+.c > li > p {
     background-color: crimson;
+        width: 20px;
 }
 
-.d > p {
+.d > li > p {
     background-color: gold;
+        width: 20px;
 }
 
-.e > p {
+.e li > p {
     background-color: darkslateblue;
+        width: 20px;
 }
 
-.g > p {
+.g li > p {
     background-color: deeppink;
+        width: 20px;
 }
 
-.f > p {
+.f > li > p {
     background-color: aquamarine;
+        width: 20px;
 }
 
-.h > p {
+.h > li > p {
     background-color: indianred;
+    width: 20px;
 }
+ 
