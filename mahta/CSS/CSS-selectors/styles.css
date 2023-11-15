@@ -1,0 +1,43 @@
+body {
+    background-color:rgb(144, 175, 202);
+}
+
+.a ~ div {
+    width: 100px; 
+}
+
+.c ~ div {
+    width: 50px;
+}
+
+.a > p {
+    background-color: darkolivegreen;
+}
+
+.b > p {
+    background-color: cornflowerblue;
+}
+
+.c > p {
+    background-color: crimson;
+}
+
+.d > p {
+    background-color: gold;
+}
+
+.e > p {
+    background-color: darkslateblue;
+}
+
+.g > p {
+    background-color: deeppink;
+}
+
+.f > p {
+    background-color: aquamarine;
+}
+
+.h > p {
+    background-color: indianred;
+}
