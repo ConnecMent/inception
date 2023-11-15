@@ -1,0 +1,34 @@
+.wrapperA {
+    width: 300px;
+    height: 100px;
+    border: 5px solid rebeccapurple;  
+  }
+  
+.wrapperB {
+    width: 40vw;
+    height: 200px;
+    border: 5px solid salmon;
+}
+
+.wrapperC {
+    font-size: 100em;
+    width: auto;
+    height: auto;
+    border: 5px solid aqua;
+}
+.wrapperC:root {
+    font-size: 30rem;
+}
+
+.wrapperA > .wrapperD {
+    height: 30;
+    width:40%;
+    border: 5px solid navy;
+}
+
+.wrapperF {
+    height: 20svh;
+    width: 30lvw;
+    border: 5px solid lawngreen;
+}
+ 
