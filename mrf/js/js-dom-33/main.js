@@ -18,9 +18,10 @@ function ButtonClick() {
   // const divF = divs[6];
   // or
   // const divF = document.body.childNodes[3];
-  // or
-  allDivs["f"].style.width = 1000 + "px";
-  allDivs["f"].style.height = 1000 + "px";
+
+  const newWH = allDivs["f"].offsetWidth * 1.5;
+  allDivs["f"].style.width = newWH + "px";
+  allDivs["f"].style.height = newWH + "px";
 
   //! 3
   // const aSubTree = document.body.childNodes[1].getElementsByTagName("div");
