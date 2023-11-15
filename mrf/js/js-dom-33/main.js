@@ -14,8 +14,6 @@ function ButtonClick() {
     allDivs[divName[i]] = divs[i];
   }
 
-  console.log(allDivs);
-
   //! 2
   // const divF = divs[6];
   // or
@@ -54,4 +52,14 @@ function ButtonClick() {
 
   allDivs["f"].appendChild(newIDiv);
   allDivs["h"].appendChild(newJDiv);
+
+  const buttonTag = document.getElementsByTagName("button")[0];
+  const resetText = document.createTextNode("Reset");
+  buttonTag.removeChild(buttonTag.firstChild);
+  buttonTag.appendChild(resetText);
+  buttonTag.setAttribute("onclick", "ResetClick()");
+}
+
+function ResetClick() {
+  location.reload(); // :))))))))))))))))))
 }
