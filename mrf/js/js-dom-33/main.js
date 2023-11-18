@@ -5,7 +5,7 @@ function getRandomNumbersRange(min, max) {
 function handleButtonClick() {
   const divs = document.getElementsByTagName("div");
   const divName = ["a", "b", "c", "d", "e", "g", "f", "h"];
-  const allDivs = new Object();
+  const allDivs = {};
 
   //! 1
   for (let i = 0; i < divs.length; i++) {
