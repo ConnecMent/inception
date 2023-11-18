@@ -49,9 +49,8 @@ function handleButtonClick() {
   allDivs["h"].appendChild(newJDiv);
 
   const buttonTag = document.getElementsByTagName("button")[0];
-  const resetText = document.createTextNode("Reset");
-  buttonTag.removeChild(buttonTag.firstChild);
-  buttonTag.appendChild(resetText);
+  buttonTag.firstChild.textContent = "Reset";
+
   buttonTag.setAttribute("onclick", "handleResetClick()");
 }
 
