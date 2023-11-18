@@ -2,7 +2,7 @@ function getRandomNumbersRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function ButtonClick() {
+function handleButtonClick() {
   const divs = document.getElementsByTagName("div");
   const divName = ["a", "b", "c", "d", "e", "g", "f", "h"];
   const allDivs = new Object();
@@ -58,9 +58,9 @@ function ButtonClick() {
   const resetText = document.createTextNode("Reset");
   buttonTag.removeChild(buttonTag.firstChild);
   buttonTag.appendChild(resetText);
-  buttonTag.setAttribute("onclick", "ResetClick()");
+  buttonTag.setAttribute("onclick", "handleResetClick()");
 }
 
-function ResetClick() {
+function handleResetClick() {
   location.reload(); // :))))))))))))))))))
 }
