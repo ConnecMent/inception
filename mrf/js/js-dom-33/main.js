@@ -8,6 +8,13 @@ function generateHSLRandomColor(h) {
   return "hsl(" + h + ", " + s + "%, " + l + "%)";
 }
 
+function createTagNodeWithText(text, tag) {
+  const textNode = document.createTextNode(text);
+  const tagNode = document.createElement(tag);
+  tagNode.appendChild(textNode);
+  return tagNode;
+}
+
 function handleButtonClick() {
   const divs = document.getElementsByTagName("div");
   const divName = ["a", "b", "c", "d", "e", "g", "f", "h"];
@@ -37,16 +44,8 @@ function handleButtonClick() {
 
   allDivs["g"].appendChild(allDivs["c"]);
 
-  let iText = document.createTextNode("i");
-  const newIDiv = document.createElement("div");
-  newIDiv.appendChild(iText);
-
-  let jText = document.createTextNode("j");
-  const newJDiv = document.createElement("div");
-  newJDiv.appendChild(jText);
-
-  allDivs["f"].appendChild(newIDiv);
-  allDivs["h"].appendChild(newJDiv);
+  allDivs["f"].appendChild(createTagNodeWithText("i", "div"));
+  allDivs["h"].appendChild(createTagNodeWithText("j", "div"));
 
   const buttonTag = document.getElementsByTagName("button")[0];
   buttonTag.firstChild.textContent = "Reset";
