@@ -7,25 +7,16 @@ function handleButtonClick() {
   const divName = ["a", "b", "c", "d", "e", "g", "f", "h"];
   const allDivs = {};
 
-  //! 1
   for (let i = 0; i < divs.length; i++) {
     let text = document.createTextNode(divName[i]);
     divs[i].appendChild(text);
     allDivs[divName[i]] = divs[i];
   }
 
-  //! 2
-  // const divF = divs[6];
-  // or
-  // const divF = document.body.childNodes[3];
-
   const newWH = allDivs["f"].offsetWidth * 1.5;
   allDivs["f"].style.width = newWH + "px";
   allDivs["f"].style.height = newWH + "px";
 
-  //! 3
-  // const aSubTree = document.body.childNodes[1].getElementsByTagName("div");
-  // or
   const aSubTree = allDivs["a"].getElementsByTagName("div");
   let indexA = getRandomNumbersRange(0, aSubTree.length - 1);
   aSubTree[indexA].style.backgroundColor = "yellow";
@@ -36,13 +27,10 @@ function handleButtonClick() {
 
   allDivs["f"].style.backgroundColor = fColor;
 
-  //! 4
   allDivs["b"].removeChild(allDivs["e"]);
 
-  //! 5
   allDivs["g"].appendChild(allDivs["c"]);
 
-  //! 6
   let iText = document.createTextNode("i");
   const newIDiv = document.createElement("div");
   newIDiv.appendChild(iText);
