@@ -13,9 +13,9 @@ function handleButtonClick() {
     allDivs[divName[i]] = divs[i];
   }
 
-  const newWH = allDivs["f"].offsetWidth * 1.5;
-  allDivs["f"].style.width = newWH + "px";
-  allDivs["f"].style.height = newWH + "px";
+  const newWidth = allDivs["f"].offsetWidth * 1.5;
+  allDivs["f"].style.width = newWidth + "px";
+  allDivs["f"].style.height = newWidth + "px";
 
   const aSubTree = allDivs["a"].getElementsByTagName("div");
   let indexA = getRandomNumbersRange(0, aSubTree.length - 1);
