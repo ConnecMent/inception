@@ -15,16 +15,67 @@ function createTagNodeWithText(text, tag) {
   return tagNode;
 }
 
-function handleButtonClick() {
-  const divs = document.getElementsByTagName("div");
-  const divName = ["a", "b", "c", "d", "e", "g", "f", "h"];
-  const allDivs = {};
+function deleteAllBodyElements() {
+  //! force delete all elmment in body
+  document.body.innerHTML = "";
 
-  for (let i = 0; i < divs.length; i++) {
-    let text = document.createTextNode(divName[i]);
-    divs[i].appendChild(text);
-    allDivs[divName[i]] = divs[i];
+  //* Create Handle Button
+  const buttonTag = document.createElement("button");
+  buttonTag.textContent = "Click Me";
+  buttonTag.setAttribute("onclick", "handleButtonClick()");
+
+  document.body.appendChild(buttonTag);
+}
+
+const allDivs = {};
+
+function generateBasicDivs() {
+  /*
+    a/
+    ├─ b/
+    │  ├─ c/
+    │  │  ├─ d/
+    │  ├─ e/
+    │  ├─ g/
+    f/
+    ├─ h/
+  */
+
+  deleteAllBodyElements();
+  delete allDivs;
+
+  const divName = ["a", "b", "c", "d", "e", "g", "f", "h"];
+
+  divName.forEach((name) => {
+    allDivs[name] = document.createElement("div");
+  });
+
+  allDivs["c"].appendChild(allDivs["d"]);
+  allDivs["b"].appendChild(allDivs["c"]);
+  allDivs["b"].appendChild(allDivs["e"]);
+  allDivs["b"].appendChild(allDivs["g"]);
+  allDivs["a"].appendChild(allDivs["b"]);
+  allDivs["f"].appendChild(allDivs["h"]);
+
+  allDivs["a"].setAttribute("class", "box");
+  allDivs["f"].setAttribute("class", "box");
+
+  allDivs["b"].setAttribute("id", "b");
+  allDivs["h"].setAttribute("id", "h");
+
+  document.body.appendChild(allDivs["a"]);
+  document.body.appendChild(allDivs["f"]);
+}
+
+function createNameDivsNodes() {
+  for (const [x, div] of Object.entries(allDivs)) {
+    let text = document.createTextNode(x);
+    div.appendChild(text);
   }
+}
+
+function handleButtonClick() {
+  createNameDivsNodes();
 
   const newWidth = allDivs["f"].offsetWidth * 1.5;
   allDivs["f"].style.width = newWidth + "px";
@@ -54,5 +105,6 @@ function handleButtonClick() {
 }
 
 function handleResetClick() {
-  location.reload(); // :))))))))))))))))))
+  deleteAllBodyElements();
+  generateBasicDivs();
 }
