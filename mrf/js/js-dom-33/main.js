@@ -8,6 +8,10 @@ function generateHSLRandomColor(h) {
   return "hsl(" + h + ", " + s + "%, " + l + "%)";
 }
 
+function convertCollectionToArray(htmlCollection) {
+  return Array.prototype.slice.call(htmlCollection);
+}
+
 function createTagNodeWithText(text, tag) {
   const textNode = document.createTextNode(text);
   const tagNode = document.createElement(tag);
@@ -81,11 +85,13 @@ function handleButtonClick() {
   allDivs["f"].style.width = newWidth + "px";
   allDivs["f"].style.height = newWidth + "px";
 
-  const aSubTree = allDivs["a"].getElementsByTagName("div");
+  const aSubTree = convertCollectionToArray(
+    allDivs["a"].getElementsByTagName("div")
+  );
 
-  for (let i = 0; i < aSubTree.length - 1; i++) {
-    aSubTree[i].style.backgroundColor = generateHSLRandomColor(60);
-  }
+  aSubTree.forEach((x) => {
+    x.style.backgroundColor = generateHSLRandomColor(60);
+  });
 
   let fColor = generateHSLRandomColor(240);
 
