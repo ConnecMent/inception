@@ -20,17 +20,18 @@ class DevConcept extends Concept {
 
 class PhilosophicalConcept extends Concept {
   private reasoning_list: string[] = [];
-  constructor(branch: string, reasoning?: string[], getBranch?: () => string) {
+  constructor(branch: string, reasoning?: string[]) {
     super(branch, "PhilosophicalConcept");
     if (reasoning) {
       this.reasoning_list = [...this.reasoning_list, ...reasoning];
     }
-    if (getBranch) {
-      this.getBranch = getBranch;
-    }
   }
 
-  addReasoning(reason: string): void {
+  getBranch(): string {
+    return this.branch;
+  }
+
+  addReasoning(reason: string) {
     this.reasoning_list.push(reason);
   }
 
@@ -43,9 +44,9 @@ class PhilosophicalConcept extends Concept {
   }
 }
 
-let dev_instance = new DevConcept("architecture");
+let devInstance = new DevConcept("architecture");
 
-console.log(dev_instance.getBranch());
+console.log(devInstance.getBranch());
 
 let philosophical_instance = new PhilosophicalConcept("main", [
   "life is too short",
