@@ -24,8 +24,7 @@
 }
 
 .wrapperF {
-    height: 20vh;
-    width: 30vw;
+    height: 20vmin;
+    width: 30vmax;
     background-color: lawngreen;
-
 }
