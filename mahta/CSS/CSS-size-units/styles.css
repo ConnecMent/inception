@@ -1,34 +1,31 @@
 .wrapperA {
     width: 300px;
     height: 100px;
-    border: 5px solid rebeccapurple;  
+    background-color: rebeccapurple;  
   }
   
 .wrapperB {
     width: 40vw;
     height: 200px;
-    border: 5px solid salmon;
+    background-color: salmon;
 }
 
 .wrapperC {
-    font-size: 100em;
-    width: auto;
-    height: auto;
-    border: 5px solid aqua;
-}
-.wrapperC:root {
-    font-size: 30rem;
+    font-size: 12px;
+    width: 100em;
+    height: 30rem;
+    background-color: aqua;
 }
 
-.wrapperA > .wrapperD {
-    height: 30;
+.wrapperD {
+    height: 30%;
     width:40%;
-    border: 5px solid navy;
+    background-color: navy;
 }
 
 .wrapperF {
-    height: 20svh;
-    width: 30lvw;
-    border: 5px solid lawngreen;
+    height: 20vh;
+    width: 30vw;
+    background-color: lawngreen;
+
 }
- 
