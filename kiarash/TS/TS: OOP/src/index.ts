@@ -27,7 +27,7 @@ class PhilosophicalConcept extends Concept {
     }
   }
 
-  getBranch(): string {
+  getBranch() {
     return this.branch;
   }
 
