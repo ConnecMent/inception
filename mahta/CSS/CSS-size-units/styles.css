@@ -1,0 +1,30 @@
+.wrapperA {
+    width: 300px;
+    height: 100px;
+    background-color: rebeccapurple;  
+  }
+  
+.wrapperB {
+    width: 40vw;
+    height: 200px;
+    background-color: salmon;
+}
+
+.wrapperC {
+    font-size: 12px;
+    width: 100em;
+    height: 30rem;
+    background-color: aqua;
+}
+
+.wrapperD {
+    height: 30%;
+    width:40%;
+    background-color: navy;
+}
+
+.wrapperF {
+    height: 20vmin;
+    width: 30vmax;
+    background-color: lawngreen;
+}
