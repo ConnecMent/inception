@@ -1,0 +1,60 @@
+body:hover {
+    background-color: rgb(144, 175, 202);
+}
+body{
+    background-color: moccasin;
+}
+* {
+border-radius: 5px;
+}
+
+.a > li > p {
+    background-color: darkolivegreen;
+    width: 20px;
+}
+
+.a li + p {
+    color: purple;
+    font-size: 18px;
+}
+
+.b > li > p {
+    background-color: cornflowerblue;
+    width: 20px;
+}
+
+.c > li > p {
+    background-color: crimson;
+    width: 20px;
+}
+
+
+.c > ul ~ p {
+    background-color: turquoise;
+    width: 20px;
+}
+
+.d > li > p {
+    background-color: gold;
+    width: 20px;
+}
+
+.e li > p {
+    background-color: darkslateblue;
+    width: 20px;
+}
+
+.g li > p {
+    background-color: deeppink;
+    width: 20px;
+}
+
+.f > li > p {
+    background-color: aquamarine;
+    width: 20px;
+}
+
+.h > li > p {
+    background-color: indianred;
+    width: 20px;
+}
