@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#row1 {
+  width: 400px;
+  height: 200px;
+  background-color: gray;
+
+  display: flex;
+}
+
+#abc {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+}
+
+.all1 {
+  display: flex;
+  justify-content: start;
+}
+.all2 {
+  display: flex;
+  justify-content: center;
+}
+.all3 {
+  display: flex;
+  justify-content: end;
+}
+
+.aa {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+.bb {
+  width: 50px;
+  height: 50px;
+  background-color: gold;
+}
+.cc {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+}
+
+#col1 {
+  width: 150px;
+  height: 150px;
+  background-color: plum;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#dd {
+  flex-basis: 50%;
+  background-color: mediumaquamarine;
+}
+#ff {
+  flex-basis: 50%;
+  background-color: salmon;
+}
+
+.row2 {
+  width: 400px;
+  height: 200px;
+  background-color: palevioletred;
+
+  display: flex;
+}
+
+.row3 {
+  width: 400px;
+  height: 200px;
+  background-color: peru;
+
+  display: flex;
+}
+
+.column1 {
+  width: 150px;
+  height: 150px;
+  background-color: fuchsia;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.g {
+  flex-basis: 50%;
+  background-color: yellowgreen;
+}
+.h {
+  flex-basis: 50%;
+  background-color: wheat;
+}
