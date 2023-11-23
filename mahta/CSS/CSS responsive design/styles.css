@@ -1,4 +1,40 @@
- body{
-    background-color: aquamarine;
+ @media only screen and (max-width: 600px) and (orientation: landscape) {
+   body{
+      background-color: lightgoldenrodyellow;
+   }
+   .Title {
+      text-align:center;
+      font-size: 2rem;
+   }
+      .Subtitle {
+      text-align: center;
+      font-size: 1.25rem;
+   }
+ }
+ @media only screen and (max-width: 600px) {
+   body{
+      background-color: lightgreen;
+   }
+   .Title {
+      text-align:start;
+      font-size: 2rem;
+   }
+      .Subtitle {
+      text-align: right;
+      font-size: 1.25rem;
+   }
+ }
+ @media only screen and (min-width: 600px) {
+   body{
+      background-color: lightblue;
+   } 
+    .Title {
+      text-align: center;
+      font-size: 2.5rem;
+   }
+      .Subtitle {
+      text-align: center;
+      font-size: 1.5rem;
+   }
  }
  
