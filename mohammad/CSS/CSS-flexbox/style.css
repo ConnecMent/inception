@@ -79,7 +79,7 @@
   width: 400px;
   height: 200px;
   background-color: peru;
-
+  justify-content: flex-end;
   display: flex;
 }
 
@@ -89,7 +89,8 @@
   background-color: fuchsia;
 
   display: flex;
-  flex-direction: column;
+
+  flex-direction: row;
   align-items: stretch;
 }
 
