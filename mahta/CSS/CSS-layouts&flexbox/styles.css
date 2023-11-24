@@ -1,0 +1,98 @@
+ *{
+    box-sizing: border-box;
+    margin: 10;
+    padding: 0;
+ }
+ 
+ .container {
+    display: flex;
+   }
+   
+ .viewport{
+    min-height: 100vh;
+    min-width: 100%;
+    border: 5px solid whitesmoke;
+  }
+  
+  .flex-parent{
+    display: flex;
+  }
+  .flex-col{
+    flex-direction: column;
+  }
+  .nav{
+    width: 40%;
+    height: 45vh;
+    border: 5px dashed wheat;
+  }
+
+  .nav2{
+    width: 60%;
+    height: 45vh;
+    border: 5px dashed plum;
+  }
+  
+  .content{
+    min-width: 100%;
+    min-height: 12vh;
+    flex-wrap: wrap;
+    border: 5px dashed lightcoral;
+  }
+  
+  .footer{
+    width: 33%;
+    height: 30vh;
+    border: 5px dashed khaki;
+  }
+
+  .footer2{
+    width: 67%;
+    height: 30vh;
+    border: 5px dashed cornsilk;
+  }
+
+ .box-1{
+    min-height: 34%;
+    background-color:lightgoldenrodyellow;
+    align-items: baseline;
+    justify-content: baseline;
+ }
+
+  .box1{
+    min-height: 50%;
+    background-color:lightsalmon;
+    align-items: center;
+    justify-content: center;
+  }
+ .box-3{
+    min-height: 33%;
+    background-color:lightpink;
+    align-items: end;
+    justify-content: end;
+  }
+ .box-2{
+    min-height: 33%;
+    background-color:bisque;
+    align-items: center;
+    justify-content: center;
+  }
+  .box3{
+    min-height: 50%;
+    background-color:lightblue;
+    align-items: center;
+    justify-content: center;
+  }
+ .box-4{
+  height: 100%;
+    background-color: lightgreen;
+    align-items:center;
+    justify-content: end;
+  }
+
+ .box-5{
+    height: 100%;
+    background-color:rgb(143, 143, 218);
+    align-items: center;
+    justify-content: center;
+  }
+ 
