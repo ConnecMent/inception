@@ -7,7 +7,7 @@ function add(a, b) {
 
 // flip a coin and log the result (head or tail)
 function flipACoin() {
-    //Math.random() generate a 0<=floating_point_number<1 
+
     let number  = Math.random();
     if(number>=0.5)
         console.log("head")
@@ -27,7 +27,7 @@ function concat(stringA, stringB) {
 
 // 2^x = ?
 function power2(x) {
-    return Math.pow(x,2);
+    return Math.pow(2,x);
 }
 
 /// ----------------------------------- ////
@@ -36,11 +36,11 @@ function power2(x) {
 // e.g. getUser('hello', 'world') is { firstName: 'Hello', lastName: 'World' }
 function getUser(firstName, lastName) {
 
-    let Uper_firstName = firstName[0].toUpperCase() + firstName.slice(1); // if firstName = Ramin => R + amin
-    let Uper_lasttName = lastName[0].toUpperCase() + lastName.slice(1);
+    let uperFirstName = firstName[0].toUpperCase() + firstName.slice(1); // if firstName = Ramin => R + amin
+    let uperLasttName = lastName[0].toUpperCase() + lastName.slice(1);
 
     return {
-        firstName:Uper_firstName,lastName:Uper_lasttName
+        firstName:uperFirstName,lastName:uperLasttName
     }
 }
 
@@ -56,13 +56,13 @@ function greet(name) {
 
 // get array of n random numbers
 function getNRandomNumberss(n) {
-    let arr_num = [];
+    let arrNum = [];
 
     for(let i=0;i<n;++i){
-        arr_num.push(Math.random());
+        arrNum.push(Math.random());
     }
 
-    return arr_num;
+    return arrNum;
 
 }
 
@@ -71,16 +71,16 @@ function getNRandomNumberss(n) {
 // get sorted array of n random numbers, in range min to max
 function getNRandomNumbers(n, min, max) {
 
-    let arr_num = []
-    let seed = max - min;
+    let arrNum = []
+    let rangeCount = max - min;
 
     for(let i=0;i<n;++i){
-        arr_num.push(Math.ceil(Math.random()*seed + min));
+        arrNum.push(Math.ceil(Math.random()*rangeCount + min));
     }
 
-    arr_num.sort();
+    arrNum.sort();
 
-    return arr_num;
+    return arrNum;
 
 }   
 
@@ -101,16 +101,13 @@ function logCurrentTime(x, n) {
 
         ++count;
         
-        if(count === n/x){
+        if(count === parseInt(n/x)){
             clearInterval(id);
         }
 
     },x*1000);
 
 }
-
-
-//logCurrentTime(2,10)
 
 /// ----------------------------------- ////
 
@@ -126,7 +123,7 @@ function callFuncNTimes(func,n,...args) {
 
 // return true if parameter is falsy, false otherwise
 function isNil(param) {
-    return !Boolean(param);
+    return !(param);
 }
 
 /// ----------------------------------- ////
