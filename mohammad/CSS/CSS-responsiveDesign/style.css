@@ -1,0 +1,55 @@
+@media screen and (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 2.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .sub-title {
+    font-size: 1.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightgreen;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .title {
+    font-size: 2rem;
+    justify-content: center;
+  }
+  .sub-title {
+    font-size: 1.25rem;
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  body {
+    background-color: lightyellow;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .sub-title {
+    font-size: 1.25rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
