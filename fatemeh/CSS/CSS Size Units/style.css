@@ -1,0 +1,27 @@
+.A {
+  background-color: violet;
+  width: 300px;
+  height: 100px;
+}
+.A > .D{
+  background-color: aquamarine;
+  width: 40%;
+  height: 30%;
+}
+
+.B {
+  background-color: skyblue;
+  width: 40%;
+  height: 200px;
+}
+.C {
+  background-color: bisque;
+  font-size: 10;
+  width: 100em;
+  height: 30rem;
+}
+.F{
+  background-color: lightgreen;
+  width: 30vmax;
+  height: 20vmin;
+}
