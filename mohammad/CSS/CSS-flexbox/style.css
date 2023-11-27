@@ -1,22 +1,19 @@
-#row1 {
+.row1 {
   width: 300px;
   height: 150px;
   background-color: gray;
-
   display: flex;
 }
-
-#abc {
+.r1c1 {
   display: flex;
   flex-direction: column;
   width: 150px;
   height: 150px;
-  background-color: blue;
+  background-color: lightblue;
 }
-
 .all1 {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .all2 {
   display: flex;
@@ -24,73 +21,65 @@
 }
 .all3 {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
-
 .aa {
   width: 50px;
   height: 50px;
-  background-color: red;
+  align-self: center;
 }
 .bb {
   width: 50px;
   height: 50px;
-  background-color: gold;
+  align-self: center;
 }
 .cc {
   width: 50px;
   height: 50px;
-  background-color: orange;
+  align-self: center;
 }
-
-#col1 {
+.r1c2 {
   width: 150px;
   height: 150px;
   background-color: plum;
 
   display: flex;
   flex-direction: column;
-  /* align-items: stretch; */
 }
-
-#dd {
+.dd {
   flex-basis: 50%;
+  justify-content: center;
   background-color: mediumaquamarine;
 }
-#ff {
+.ff {
   flex-basis: 50%;
   background-color: salmon;
 }
-
 .row2 {
   width: 300px;
-  height: 150px;
+  height: 100px;
   display: flex;
-  flex-direction: row;
   background-color: peru;
 }
 .row3 {
   width: 300px;
   height: 150px;
   display: flex;
-
   background-color: hotpink;
 }
-.column1 {
+.r3c1 {
   width: 150px;
   height: 150px;
-  background-color: yellowgreen;
-
+  background-color: lightgreen;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
 }
-.column2 {
+.r3c2 {
   width: 150px;
   height: 150px;
   background-color: wheat;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -98,8 +87,7 @@
 }
 .gg {
   flex-basis: 50%;
-  justify-content: center;
-  align-items: center;
+  align-self: flex-end;
 }
 .hh {
   flex-basis: 50%;
