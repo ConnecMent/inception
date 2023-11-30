@@ -6,17 +6,17 @@ function flipACoin() {
     var random = Math.random();
     if (random > 0.5) {
         retuen("tail");
-    } else if (random <= 0.5) {
+    } else {
         return("head");
     }
 }
 
 function concat(stringA, stringB) {
-    return(stringA + stringB);
+    return(stringA.concat('', stringA, stringB));
 }
 
 function power2(x) {
-    return(Math.pow(2,x));
+    return(2**x);
 }
 
 function getUser(firstName, lastName) {
@@ -69,7 +69,7 @@ function callFuncNTimes(flipACoin) {
     }
 }
 
-  //couldn't undrestand what we need
+  //couldn't undrestand what we needs
 function isNil(param) {
     return !param;
   }
@@ -83,9 +83,9 @@ function isNil(param) {
 function isGmail(email) {
     const searchTerm = "@Gmail.com";
     if (email.includes(searchTerm)) {
-        console.log("Is Gmail!");
+        return true;
       } else {
-        console.log("Is not Gmail!");
+        return false;
       }
 }
 
