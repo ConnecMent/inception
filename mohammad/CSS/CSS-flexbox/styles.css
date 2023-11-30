@@ -7,7 +7,7 @@
 .r1c1 {
   width: 150px;
   height: 150px;
-  background-color: lightsalmon;
+  background-color: rgb(156, 119, 104);
   display: flex;
   flex-direction: column;
 }
