@@ -1,0 +1,73 @@
+.main {
+  background-color: lightgray;
+}
+
+.row1 {
+  display: flex;
+  align-items: stretch;
+}
+.column1 {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.column1 > div {
+  background-color: lightblue;
+  padding: 5px;
+  flex-grow: 1;
+}
+.column1 > .A {
+  display: flex;
+  justify-content: left;
+}
+.column1 > .B {
+  display: flex;
+  justify-content: center;
+}
+.column1 > .C {
+  display: flex;
+  justify-content: right;
+}
+.column2 {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.column2 > .D {
+  display: flex;
+  background-color: yellowgreen;
+  justify-content: center;
+  flex-grow: 1;
+}
+.row2 {
+  border-bottom: dashed grey 1px;
+}
+.row2,
+.row3 {
+  height: 20px;
+}
+.column2 > .F {
+  display: flex;
+  background-color: orange;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.row4 {
+  display: flex;
+}
+.row4 > .G {
+  display: flex;
+  padding: 5px;
+  justify-content: right;
+  width: 60%;
+  background-color: yellow;
+}
+.row4 > .H {
+  display: flex;
+  width: 40%;
+  background-color: pink;
+  justify-content: center;
+  align-items: center;
+}
