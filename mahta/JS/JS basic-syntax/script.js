@@ -45,38 +45,32 @@ function getNRandomNumbers(n, min, max) {
     return random_numbers;   
 }
 
-//Not functioning
+//Still not functioning
 function logCurrentTime(x, n) {
-    for (let i = 0; i <= Math.floor(n/x); i++) {
-      setTimeout(() => { console.log('Time:'+ Date()); }, i * x * 1000);
+    let counter = 0;
+    const intervalId = setInterval(() => {
+      console.log('Time: ' + new Date());
+      counter++;
+      if (counter === Math.floor(n / x)) {
+        clearInterval(intervalId);
+      }
+    }, x * 1000);
+  }
+  
+
+  function callFuncNTimes(func, n, ...funcParams) {
+    for (let i = 0; i < n; i++) {
+      func(...funcParams[i]);
     }
   }
   
-  
 
-function callFuncNTimes(flipACoin) {
-    let count = 0;
-    for(let i = 0; i < 3; i++){
-        if (flipACoin()==='head'){
-            count++;
-        }
-    }
-    if (count <= 2){
-        console.log("heads won!");
-    }
-    else {
-        console.log("tails won!");
-    }
-}
-
-  //couldn't undrestand what we needs
 function isNil(param) {
     return !param;
   }
 
-  //couldn't undrestand what we need
   function callPropInObj(object, propertyName) {
-    object[propertyName]();
+    object?.[propertyName]?.();
   }
   
 
@@ -91,10 +85,7 @@ function isGmail(email) {
 
 function duplicateArray() {
     let fruits = ['Apple', 'Orange', 'Strawberry'];
-    let duplicatedFruits = fruits;
-    for (let x in fruits) {
-      duplicatedFruits.push(fruits[x]);
-    }
-    console.log(duplicatedFruits);
+    fruits = fruits.concat(fruits);
+    console.log(fruits);
   }
  
