@@ -12,7 +12,7 @@ function flipACoin() {
 }
 
 function concat(stringA, stringB) {
-    return(stringA.concat('', stringA, stringB));
+    return(stringA.concat(stringA, stringB));
 }
 
 function power2(x) {
@@ -75,8 +75,7 @@ function isNil(param) {
   
 
 function isGmail(email) {
-    const searchTerm = "@Gmail.com";
-    if (email.includes(searchTerm)) {
+    if (email.endsWith("@isGmail.com")) {
         return true;
       } else {
         return false;
@@ -86,6 +85,6 @@ function isGmail(email) {
 function duplicateArray() {
     let fruits = ['Apple', 'Orange', 'Strawberry'];
     fruits = fruits.concat(fruits);
-    console.log(fruits);
+    return fruits;
   }
  
