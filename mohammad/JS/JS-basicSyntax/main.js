@@ -76,26 +76,24 @@ function callFuncNTimes(func, n) {
 
 // return true if parameter is falsy, false otherwise
 function isNil(param) {
-  if (param == false) return true;
-  else if (param == true) return false;
+  return !param;
 }
 
 // call property in object
 // e.g. in obj = { callableProp: function () { console.log('hello!') } }, callPropInObj(obj, 'callableProp') will log "hello!"
 function callPropInObj(object, propertyName) {
-  //return object["propertyName"];
-  return object.propertyName;
+  if (typeof object[propertyName] === "function") {
+    object[propertyName]();
+  }
 }
 
 // if the email is gmail
 function isGmail(email) {
-  let condition = email.slice(-1, 9);
-  if (condition == "gmail.com") return true;
-  return false;
+  return email.endsWith("@gmail.com");
 }
 
 // duplicate array
 // e.g. duplicateArray([1,2,3]) is [1,2,3,1,2,3]
 function duplicateArray(arr) {
-  return arr.append(arr);
+  return arr.concat(arr);
 }
