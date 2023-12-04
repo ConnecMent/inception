@@ -60,7 +60,7 @@ function logCurrentTime(x, n) {
 
   function callFuncNTimes(func, n, ...funcParams) {
     for (let i = 0; i < n; i++) {
-      func(...funcParams[i]);
+      func(...funcParams);
     }
   }
   
