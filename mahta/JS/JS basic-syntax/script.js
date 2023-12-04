@@ -45,7 +45,6 @@ function getNRandomNumbers(n, min, max) {
     return random_numbers;   
 }
 
-//Still not functioning
 function logCurrentTime(x, n) {
     let counter = 0;
     const intervalId = setInterval(() => {
