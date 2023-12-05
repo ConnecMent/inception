@@ -1,3 +1,23 @@
+// Define the API URL
+const apiUrl = "https://jsonplaceholder.typicode.com/";
+
+async function getAuthorPost(userID) {
+  const response = await fetch(apiUrl + `users/${userID}`);
+  const final = await response.json();
+
+  return final["name"];
+}
+
+async function getPost(id) {
+  const response = await fetch(apiUrl + `posts/${id}`);
+  const final = await response.json();
+
+  const author = await getAuthorPost(final["userId"]);
+  final["name"] = author;
+
+  return final;
+}
+
 genID = 0;
 allDivs = {};
 
@@ -41,6 +61,8 @@ function deleteCard(masterID) {
   }
 }
 
-for (let i = 0; i < 10; i++) {
-  document.body.appendChild(addCard("test", "test2", "test3"));
+for (let i = 1; i < 100; i+=10) {
+  getPost(i).then((x) => {
+    document.body.appendChild(addCard(x["title"], x["body"], x["name"]));
+  });
 }
