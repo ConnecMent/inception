@@ -37,6 +37,7 @@ function addCard(titleIn, textIn, authorIn) {
 function deleteCard(masterID) {
   if (window.confirm("Do you really want to Delete?")) {
     document.body.removeChild(allDivs[masterID]);
+    delete allDivs[masterID];
   }
 }
 
