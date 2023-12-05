@@ -48,6 +48,7 @@ function getNRandomNumbers(n) {
 function getNRandomNumbers(n, min, max) {
   let arr = [];
   for (let i = 0; i < n; i++) arr[i] = Math.random() * (max - min) + min;
+  arr.sort();
   return arr;
 }
 
