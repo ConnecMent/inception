@@ -1,0 +1,14 @@
+* {
+    border-radius: 5px;
+}
+.container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: whitesmoke;
+  }
+  
+  .container div {
+    height: 50%;
+    width: 50%;
+  }
