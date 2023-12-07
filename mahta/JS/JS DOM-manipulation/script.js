@@ -7,11 +7,11 @@ function onButtonClickSet() {
   }
   
   function onButtonClickReset() {
-    alert('Reset clicked!');
+      alert('Reset clicked!');
+      button1.style.display = 'none';
+      const button2 = document.getElementById('set');
+      button2.style.display = 'block';
     const button1 = document.getElementById('reset');
-    button1.style.display = 'none';
-    const button2 = document.getElementById('set');
-    button2.style.display = 'block';
   }
   
   function hideButton() {
