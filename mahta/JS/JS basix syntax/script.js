@@ -1,5 +1,5 @@
 function add(a,b){
-    return(a + b);
+    return a + b;
 }
 
 function flipACoin() {
@@ -20,9 +20,9 @@ function power2(x) {
 }
 
 function getUser(firstName, lastName) {
-    const FirstName=firstName.replace(firstName.charAt(0),firstName.charAt(0).toUpperCase());
-    const LastName=lastName.replace(lastName.charAt(0),lastName.charAt(0).toUpperCase());
-    return{FirstName, LastName};
+    const firstName=firstName.replace(firstName.charAt(0),firstName.charAt(0).toUpperCase());
+    const lastName=lastName.replace(lastName.charAt(0),lastName.charAt(0).toUpperCase());
+    return{firstName, lastName};
 }
 
 function greet(name) {
@@ -73,11 +73,7 @@ function isNil(param) {
 }
 
 function isGmail(email) {
-    if (email.endsWith("@isGmail.com")) {
-        return true;
-      } else {
-        return false;
-      }
+  return email.endsWith("@isGmail.com") ;
 }
 
 function duplicateArray() {
