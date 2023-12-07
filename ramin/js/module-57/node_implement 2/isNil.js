@@ -1,6 +1,6 @@
 //seccond way
 
-export function isNil(param) {
+export default function isNil(param) {
      return !(param);
 }
 

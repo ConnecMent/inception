@@ -1,4 +1,4 @@
 // return true if parameter is falsy, false otherwise
-export function isNil(param) {
+export default function isNil(param) {
     return !(param);
 }

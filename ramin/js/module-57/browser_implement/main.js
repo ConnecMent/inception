@@ -1,6 +1,6 @@
 import {getNRandomNumberss,getNRandomNumbers} from "./randomUtils.js";
 
-import {isNil} from "./isNil.js";
+import isNil from "./isNil.js";
 
 
 console.log(getNRandomNumberss(5));

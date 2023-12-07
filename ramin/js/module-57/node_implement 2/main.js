@@ -1,7 +1,7 @@
 /////////  How to use the seccond way
 
 import {getNRandomNumberss,getNRandomNumbers} from "./randomUtils.js";
-import { isNil } from "./isNil.js";
+import isNil from "./isNil.js";
 
 let display1 = getNRandomNumbers(5,10,20);
 console.log(display1);
