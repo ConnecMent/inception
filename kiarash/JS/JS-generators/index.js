@@ -20,16 +20,16 @@ async function* delayedRandomSource() {
   }
 }
 
-let generatorRunner = async (generatorFunction) => {
-  let generator = generatorFunction();
+let iterateOnGeneratorFn = async (generatorFunction) => {
+  let iterator = generatorFunction();
 
-  for await (let value of generator) {
+  for await (let value of iterator) {
     console.log("vanilla: ", value);
   }
 };
 
 // with vanilla js
-generatorRunner(delayedRandomSource);
+iterateOnGeneratorFn(delayedRandomSource);
 
 // with it package
 const arr = await all(delayedRandomSource());
