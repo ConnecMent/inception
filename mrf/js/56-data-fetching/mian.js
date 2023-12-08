@@ -57,6 +57,11 @@ function addCard(titleIn, textIn, authorIn, ID) {
 function deleteCard(masterID) {
   if (window.confirm("Do you really want to Delete?")) {
     document.body.removeChild(allDivs[masterID]);
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${masterID}`, {
+      method: "DELETE",
+    }).then(() => window.alert("Deleted!!!"));
+
     delete allDivs[masterID];
   }
 }
