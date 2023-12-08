@@ -27,27 +27,62 @@ function addCard(titleIn, textIn, authorIn) {
 
 const apiUrl = "https://jsonplaceholder.typicode.com/";
 
-async function getAuthorPost(userID) {
+async function getAuthorPostByID(userID) {
   const response = await fetch(apiUrl + `users/${userID}`);
   const final = await response.json();
 
   return final["name"];
 }
 
+async function searchAuthor(query) {
+  const response = await fetch(apiUrl + `users?name=${query}`);
+  const final = await response.json();
+
+  if (final["length"] != 0) {
+    const authorID = final[0]["id"];
+
+    const responsePost = await fetch(apiUrl + `posts?userId=${authorID}`);
+    const finalPost = await responsePost.json();
+
+    return finalPost;
+  }
+
+  return [];
+}
+
+async function searchTitle(query) {
+  const response = await fetch(apiUrl + `posts?title=${query}`);
+  const final = await response.json();
+
+  return final;
+}
+
+async function searchBody(query) {
+  const response = await fetch(apiUrl + `posts?body=${query}`);
+  const final = await response.json();
+
+  return final;
+}
+
 async function apiSearch(query) {
   const responseDiv = document.getElementById("response");
   responseDiv.innerHTML = "";
 
-  const response = await fetch(apiUrl + `posts?userId=${query}`);
-  const final = await response.json();
-
-  console.log(final);
-
-  final.forEach(async function (element) {
-    const nameAuthor = await getAuthorPost(element["userId"]);
-    responseDiv.appendChild(
-      addCard(element["title"], element["body"], nameAuthor)
-    );
+  Promise.all([
+    searchAuthor(query),
+    searchTitle(query),
+    searchBody(query),
+  ]).then((final) => {
+    final.forEach((item) => {
+      if (item["length"] != 0) {
+        item.forEach(async function (element) {
+          const nameAuthor = await getAuthorPostByID(element["userId"]);
+          responseDiv.appendChild(
+            addCard(element["title"], element["body"], nameAuthor)
+          );
+        });
+      }
+    });
   });
 }
 
