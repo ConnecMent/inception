@@ -18,10 +18,9 @@ async function getPost(id) {
   return final;
 }
 
-genID = 0;
 allDivs = {};
 
-function addCard(titleIn, textIn, authorIn) {
+function addCard(titleIn, textIn, authorIn, ID) {
   const master = document.createElement("div");
   master.setAttribute("class", "card");
 
@@ -36,11 +35,12 @@ function addCard(titleIn, textIn, authorIn) {
 
   const deleteButton = document.createElement("button");
   deleteButton.setAttribute("class", "delete");
-  deleteButton.setAttribute("onClick", `deleteCard(${genID})`);
+  deleteButton.setAttribute("onClick", `deleteCard(${ID})`);
   deleteButton.textContent = "Delete";
 
   const updateButton = document.createElement("button");
   updateButton.setAttribute("class", "update");
+  updateButton.setAttribute("onClick", `updateCard(${ID})`);
   updateButton.textContent = "Update";
 
   master.appendChild(title);
@@ -49,7 +49,7 @@ function addCard(titleIn, textIn, authorIn) {
   master.appendChild(deleteButton);
   master.appendChild(updateButton);
 
-  allDivs[genID++] = master;
+  allDivs[ID] = master;
 
   return master;
 }
@@ -61,8 +61,34 @@ function deleteCard(masterID) {
   }
 }
 
-for (let i = 1; i < 100; i+=10) {
+function updateCard(masterID) {
+  const title = allDivs[masterID].getElementsByTagName("p")[0].innerHTML;
+  const body = allDivs[masterID].getElementsByTagName("p")[1].innerHTML;
+
+  const newBody = window.prompt(`Editing: ${title}`, body);
+
+  if (newBody != null) {
+    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method: "PUT",
+      body: JSON.stringify({
+        id: masterID,
+        title: title,
+        body: newBody,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        allDivs[masterID].getElementsByTagName("p")[1].innerHTML = json["body"];
+        window.alert("Updated!");
+      });
+  }
+}
+
+for (let i = 1; i < 100; i += 10) {
   getPost(i).then((x) => {
-    document.body.appendChild(addCard(x["title"], x["body"], x["name"]));
+    document.body.appendChild(addCard(x["title"], x["body"], x["name"], i));
   });
 }
