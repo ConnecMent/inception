@@ -1,41 +1,44 @@
-
-const button = document.getElementById('reset');
-const button2 = document.getElementById('set');
 function onButtonClickSet() {
-    button2.style.display = 'none';
-    button.style.display = 'block';
-  }
+  document.body.innerHTML = "";
+  const buttonTag = document.createElement("button");
+  buttonTag.textContent = "Reset";
+  buttonTag.addEventListener('click', firstPage);
+  document.body.appendChild(buttonTag);
+}
 
-  const box= [];  
- function firstPage() {
-
-    button.style.display = 'none';
-    button2.style.display = 'block';
- 
+function firstPage() {
+  document.body.innerHTML = "";
+  const buttonTag = document.createElement("button");
+  buttonTag.textContent = "Click Me!";
+  buttonTag.addEventListener('click', onButtonClickSet);
+  
+document.body.appendChild(buttonTag);
     const elm = ["a", "b", "c", "d", "e", "g", "f", "h"];
-    box.forEach((index) => {
+    elm.forEach((element, index) => {
       elm[index] = document.createElement("div");
     });
     
-
-    document.body.appendChild(box[0]);
-    box[0].appendChild(box[1]);
-    box[1].appendChild(box[2]);
-    box[2].appendChild(box[3]);
-    box[1].appendChild(box[4]);
-    box[1].appendChild(box[5]);
-    document.body.appendChild(box[6]);
-    box[6].appendChild(box[7]);
-
+    document.body.appendChild(elm[0]);
+    elm[0].appendChild(elm[1]);
+    elm[1].appendChild(elm[2]);
+    elm[2].appendChild(elm[3]);
+    elm[1].appendChild(elm[4]);
+    elm[1].appendChild(elm[5]);
+    document.body.appendChild(elm[6]);
+    elm[6].appendChild(elm[7]);
     
-    box[0].setAttribute("class", "container");
-    box[6].setAttribute("class", "container");
-  
+    elm[0].classList.add("container");
+    elm[1].classList.add("container");
+    elm[2].classList.add("container");
+    elm[3].classList.add("container");
+    elm[4].classList.add("container");
+    elm[5].classList.add("container");
+    elm[6].classList.add("container");
+    elm[7].classList.add("container");
+    
   }
 
   
-  const set = document.querySelector('#set');
-  set.addEventListener('click', onButtonClickSet);
   
   const reset = document.querySelector('#reset');
   reset.addEventListener('click', firstPage);
