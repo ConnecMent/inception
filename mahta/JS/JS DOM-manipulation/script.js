@@ -1,8 +1,16 @@
+function generateRandomColor(r, g, b) {
+  const blue = Math.floor(Math.random() * 100) + b;
+  const green = Math.floor(Math.random() * 100) + g;
+  const red = Math.floor(Math.random() * 100) + r;
+  const color = `rgb(${red}, ${green}, ${blue})`;
+  return color;
+}
+
 function onButtonClickSet() {
   document.body.innerHTML = "";
   const buttonTag = document.createElement("button");
   buttonTag.textContent = "Reset";
-  buttonTag.addEventListener("click", firstPage);
+  buttonTag.addEventListener('click', firstPage);
   document.body.appendChild(buttonTag);
 
   const elm = ["a", "b", "c", "d", "g", "f", "h", "i", "j"];
@@ -17,6 +25,20 @@ function onButtonClickSet() {
   divElements[5].style.width = "250px";
   divElements[5].style.height = "250px";
 
+  let fColor = generateRandomColor(0, 0, 256);
+  divElements[5].style.backgroundColor = fColor;
+  let aColor = generateRandomColor(256, 256, 0);
+  divElements[0].style.backgroundColor = aColor;
+  //Not functioning
+  subTree = [];
+  subTree.forEach((x) => {
+    if (Array.from(divElements[0].childNodes).includes(x)) {
+      x.style.backgroundColor = generateRandomColor(256, 256, 0);
+    } else {
+      x.style.backgroundColor = generateRandomColor(0, 0, 256);
+    }
+  });
+
   const container = document.createElement("div");
 
   document.body.appendChild(divElements[0]);
@@ -28,8 +50,7 @@ function onButtonClickSet() {
   divElements[5].appendChild(divElements[6]);
   divElements[5].appendChild(divElements[7]);
   divElements[6].appendChild(divElements[8]);
-
-  divElements[0].classList.add("container"); 
+  divElements[0].classList.add("container");
   divElements[1].classList.add("container");
   divElements[2].classList.add("container");
   divElements[3].classList.add("container");
