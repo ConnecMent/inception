@@ -1,0 +1,58 @@
+/*large device*/
+.Main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.Header {
+  font-size: 2.5rem;
+}
+.Subtitle {
+  font-size: 1.5rem;
+}
+* {
+  background-color: lightblue;
+}
+
+@media only screen and (max-width: 600px) {
+  /*smaller device*/
+  .Main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: start;
+    align-items: start;
+  }
+  * {
+    background-color: lightgreen;
+  }
+
+  .Header {
+    font-size: 2rem;
+  }
+  .Subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (orientation: landscpae) {
+  /*landscape smaller device*/
+  .Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  * {
+    background-color: lightyellow;
+  }
+  .Header {
+    font-size: 2.5rem;
+  }
+  .Subtitle {
+    font-size: 1.5rem;
+  }
+}
