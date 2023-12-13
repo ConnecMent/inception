@@ -4,8 +4,5 @@ function isNil(param) {
 }
 
 
-module.exports = {
-    isNil
-}
-
+module.exports  =  isNil;
 
