@@ -1,64 +1,72 @@
-function generateRandomColor(r, g, b) {
-  const blue = Math.floor(Math.random() * 100) + b;
-  const green = Math.floor(Math.random() * 100) + g;
-  const red = Math.floor(Math.random() * 100) + r;
-  const color = `rgb(${red}, ${green}, ${blue})`;
-  return color;
+function generateRandomColor(y, b) {
+  const yellow = Math.floor(Math.random() * (y - 155) + 155);
+  const blue = Math.floor(Math.random() * (b - 100) + 100);
+  return `rgb(${yellow}, ${yellow}, ${blue})`;
 }
 
 function onButtonClickSet() {
   document.body.innerHTML = "";
   const buttonTag = document.createElement("button");
   buttonTag.textContent = "Reset";
-  buttonTag.addEventListener('click', firstPage);
+  buttonTag.addEventListener("click", firstPage);
   document.body.appendChild(buttonTag);
 
-  const elm = ["a", "b", "c", "d", "g", "f", "h", "i", "j"];
+  const elm = {
+    a: 0,
+    b: 1,
+    c: 2,
+    d: 3,
+    f: 4,
+    g: 5,
+    h: 6,
+    i: 7,
+    j: 8,
+  };
+
   const divElements = [];
 
-  elm.forEach((element) => {
+  Object.keys(elm).forEach((element) => {
     const div = document.createElement("div");
     div.innerText = element;
     divElements.push(div);
   });
 
-  divElements[5].style.width = "250px";
-  divElements[5].style.height = "250px";
+  divElements[4].style.width = "250px";
+  divElements[4].style.height = "250px";
 
-  let fColor = generateRandomColor(0, 0, 256);
-  divElements[5].style.backgroundColor = fColor;
-  let aColor = generateRandomColor(256, 256, 0);
-  divElements[0].style.backgroundColor = aColor;
-  //Not functioning
-  subTree = [];
-  subTree.forEach((x) => {
-    if (Array.from(divElements[0].childNodes).includes(x)) {
-      x.style.backgroundColor = generateRandomColor(256, 256, 0);
-    } else {
-      x.style.backgroundColor = generateRandomColor(0, 0, 256);
-    }
-  });
+
 
   const container = document.createElement("div");
 
   document.body.appendChild(divElements[0]);
   divElements[0].appendChild(divElements[1]);
-  divElements[4].appendChild(divElements[2]);
+  divElements[5].appendChild(divElements[2]);
   divElements[2].appendChild(divElements[3]);
-  divElements[1].appendChild(divElements[4]);
-  document.body.appendChild(divElements[5]);
-  divElements[5].appendChild(divElements[6]);
-  divElements[5].appendChild(divElements[7]);
+  divElements[1].appendChild(divElements[5]);
+  document.body.appendChild(divElements[4]);
+  divElements[4].appendChild(divElements[6]);
+  divElements[4].appendChild(divElements[7]);
   divElements[6].appendChild(divElements[8]);
   divElements[0].classList.add("container");
   divElements[1].classList.add("container");
   divElements[2].classList.add("container");
   divElements[3].classList.add("container");
-  divElements[4].classList.add("container");
   divElements[5].classList.add("container");
+  divElements[4].classList.add("container");
   divElements[6].classList.add("container");
   divElements[7].classList.add("container");
   divElements[8].classList.add("container");
+
+  const subTree = Object.values(elm).map((x) => divElements[x]);
+
+  subTree.forEach((x) => {
+    if ((Array.from(divElements[4].childNodes).includes(x))||(Array.from(divElements[6].childNodes).includes(x)) ){
+      x.style.backgroundColor = generateRandomColor(0, 255);
+    } else {
+      x.style.backgroundColor = generateRandomColor(255, 0);
+    }
+  });
+  divElements[4].style.backgroundColor=generateRandomColor(0, 255)
 }
 
 function firstPage() {
@@ -68,28 +76,38 @@ function firstPage() {
   buttonTag.addEventListener("click", onButtonClickSet);
 
   document.body.appendChild(buttonTag);
-  const elm = ["a", "b", "c", "d", "e", "g", "f", "h"];
-  elm.forEach((element, index) => {
-    elm[index] = document.createElement("div");
+  const elm = {
+    a: 0,
+    b: 1,
+    c: 2,
+    d: 3,
+    e: 4,
+    f: 5,
+    g: 6,
+    h: 7,
+  };
+
+  Object.keys(elm).forEach((element) => {
+    elm[element] = document.createElement("div");
   });
 
-  document.body.appendChild(elm[0]);
-  elm[0].appendChild(elm[1]);
-  elm[1].appendChild(elm[2]);
-  elm[2].appendChild(elm[3]);
-  elm[1].appendChild(elm[4]);
-  elm[1].appendChild(elm[5]);
-  document.body.appendChild(elm[6]);
-  elm[6].appendChild(elm[7]);
+  document.body.appendChild(elm["a"]);
+  elm["a"].appendChild(elm["b"]);
+  elm["b"].appendChild(elm["c"]);
+  elm["c"].appendChild(elm["d"]);
+  elm["b"].appendChild(elm["e"]);
+  elm["b"].appendChild(elm["f"]);
+  document.body.appendChild(elm["g"]);
+  elm["g"].appendChild(elm["h"]);
 
-  elm[0].classList.add("container");
-  elm[1].classList.add("container");
-  elm[2].classList.add("container");
-  elm[3].classList.add("container");
-  elm[4].classList.add("container");
-  elm[5].classList.add("container");
-  elm[6].classList.add("container");
-  elm[7].classList.add("container");
+  elm["a"].classList.add("container");
+  elm["b"].classList.add("container");
+  elm["c"].classList.add("container");
+  elm["d"].classList.add("container");
+  elm["e"].classList.add("container");
+  elm["f"].classList.add("container");
+  elm["g"].classList.add("container");
+  elm["h"].classList.add("container");
 }
 
 const reset = document.querySelector("#reset");
