@@ -1,21 +1,22 @@
 /*large device*/
-.Main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+@media only screen and (min-width: 600px) {
+  .Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .Header {
+    font-size: 2.5rem;
+  }
+  .Subtitle {
+    font-size: 1.5rem;
+  }
+  * {
+    background-color: lightblue;
+  }
 }
-.Header {
-  font-size: 2.5rem;
-}
-.Subtitle {
-  font-size: 1.5rem;
-}
-* {
-  background-color: lightblue;
-}
-
 @media only screen and (max-width: 600px) {
   /*smaller device*/
   .Main {
@@ -37,7 +38,7 @@
   }
 }
 
-@media only screen and (orientation: landscpae) {
+@media only screen and (orientation: landscpae) and (max-width: 600px) {
   /*landscape smaller device*/
   .Main {
     display: flex;
@@ -50,9 +51,9 @@
     background-color: lightyellow;
   }
   .Header {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .Subtitle {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
