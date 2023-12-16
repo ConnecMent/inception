@@ -18,11 +18,10 @@ async function getPost(id) {
   return final;
 }
 
-allDivs = {};
-
 function addCard(titleIn, textIn, authorIn, ID) {
   const master = document.createElement("div");
   master.setAttribute("class", "card");
+  master.setAttribute("id", ID);
 
   const title = document.createElement("p");
   title.textContent = titleIn;
@@ -49,26 +48,24 @@ function addCard(titleIn, textIn, authorIn, ID) {
   master.appendChild(deleteButton);
   master.appendChild(updateButton);
 
-  allDivs[ID] = master;
-
   return master;
 }
 
 function deleteCard(masterID) {
   if (window.confirm("Do you really want to Delete?")) {
-    document.body.removeChild(allDivs[masterID]);
-
+    const masterDIV = document.getElementById(masterID);
+    document.body.removeChild(masterDIV);
+    
     fetch(`https://jsonplaceholder.typicode.com/posts/${masterID}`, {
       method: "DELETE",
     }).then(() => window.alert("Deleted!!!"));
-
-    delete allDivs[masterID];
   }
 }
 
 function updateCard(masterID) {
-  const title = allDivs[masterID].getElementsByTagName("p")[0].innerHTML;
-  const body = allDivs[masterID].getElementsByTagName("p")[1].innerHTML;
+  const masterDIV = document.getElementById(masterID);
+  const title = masterDIV.getElementsByTagName("p")[0].innerHTML;
+  const body = masterDIV.getElementsByTagName("p")[1].innerHTML;
 
   const newBody = window.prompt(`Editing: ${title}`, body);
 
@@ -86,7 +83,7 @@ function updateCard(masterID) {
     })
       .then((response) => response.json())
       .then((json) => {
-        allDivs[masterID].getElementsByTagName("p")[1].innerHTML = json["body"];
+        masterDIV.getElementsByTagName("p")[1].innerHTML = json["body"];
         window.alert("Updated!");
       });
   }
