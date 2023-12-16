@@ -34,12 +34,18 @@ function addCard(titleIn, textIn, authorIn, ID) {
 
   const deleteButton = document.createElement("button");
   deleteButton.setAttribute("class", "delete");
-  deleteButton.setAttribute("onClick", `deleteCard(${ID})`);
+  deleteButton.addEventListener("click", () => {
+    //   deleteCard(event.target.parentNode.id);
+    deleteCard(ID);
+  });
   deleteButton.textContent = "Delete";
 
   const updateButton = document.createElement("button");
   updateButton.setAttribute("class", "update");
-  updateButton.setAttribute("onClick", `updateCard(${ID})`);
+  updateButton.addEventListener("click", () => {
+    //   updateCard(event.target.parentNode.id);
+    updateCard(ID);
+  });
   updateButton.textContent = "Update";
 
   master.appendChild(title);
@@ -55,7 +61,7 @@ function deleteCard(masterID) {
   if (window.confirm("Do you really want to Delete?")) {
     const masterDIV = document.getElementById(masterID);
     document.body.removeChild(masterDIV);
-    
+
     fetch(`https://jsonplaceholder.typicode.com/posts/${masterID}`, {
       method: "DELETE",
     }).then(() => window.alert("Deleted!!!"));
