@@ -60,11 +60,12 @@ function addCard(titleIn, textIn, authorIn, ID) {
 function deleteCard(masterID) {
   if (window.confirm("Do you really want to Delete?")) {
     const masterDIV = document.getElementById(masterID);
-    document.body.removeChild(masterDIV);
-
     fetch(`https://jsonplaceholder.typicode.com/posts/${masterID}`, {
       method: "DELETE",
-    }).then(() => window.alert("Deleted!!!"));
+    }).then((response) => {
+      document.body.removeChild(masterDIV);
+      window.alert("Deleted!!!");
+    });
   }
 }
 
