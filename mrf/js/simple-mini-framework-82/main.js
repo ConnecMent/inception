@@ -8,59 +8,84 @@
  * @param children children array
  */
 const createElement = (elementType, props, children) => {
-    // implement it here
-    // hint: start by checking elementType. Is it a string or function?
-  
-    // then return such an object:
-    const element = {
-      type: '',
-      props: [],
-      children: [],
-    };
-    return element;
+  // hint: start by checking elementType. Is it a string or function?
+
+  // then return such an object:
+  const element = {
+    type: "",
+    props: [],
+    children: [],
   };
-  
+
+  if (typeof elementType == "string") {
+    element.type = elementType;
+    element.props = props;
+    element.children = children;
+  } else if (typeof elementType == "function") {
+    const returnElement = elementType();
+    element.type = returnElement.type;
+    console.log(returnElement);
+    if (!returnElement.props || !props ) {
+      console.log("ds");
+    } else {
+      element.props = returnElement.props.concat(props);
+    }
+    element.children = returnElement.children.concat(children);
+  } else {
+    // finalType = elementType();
+  }
+  return element;
+};
+
+const mmd = (peo) =>
+  createElement("b", [], ["dsffs", "dsfssdf"]);
+
+console.log(createElement(mmd, [{ mmddd: "dsd" }], ["ffg"]));
+
+/**
+ * "render" an element into a domNode. In other words, get a JS object (= the element), which represents a tree of DOM nodes. Then create DOM elements for leaves and nodes, one by one, as you did in your dom manipulation tasks.
+ * @param element an element created by `createElement`
+ * @param domNode a node to render the element into
+ */
+const render = (element, domNode) => {
+  // implement it here
+};
+
+// Sample usage:
+
+// a custom "type" for our createElement
+const Greet = (props) => {
   /**
-   * "render" an element into a domNode. In other words, get a JS object (= the element), which represents a tree of DOM nodes. Then create DOM elements for leaves and nodes, one by one, as you did in your dom manipulation tasks.
-   * @param element an element created by `createElement`
-   * @param domNode a node to render the element into
+   * we want such a tree for our greet text:
+   * <span class="awesome-class">Hello, <b>{props.name}</b>!</span>
    */
-  const render = (element, domNode) => {
-    // implement it here
-  };
-  
-  // Sample usage:
-  
-  // a custom "type" for our createElement
-  const Greet = (props) => {
-    /**
-     * we want such a tree for our greet text:
-     * <span class="awesome-class">Hello, <b>{props.name}</b>!</span>
-     */
-    return createElement('span', [{ class: 'awesome-class' }], [
-      'Hello, ',
-      createElement('b', [], props.name),
-      '!'
-    ]);
-  }
-  
-  // another custom type, which uses the previous custom type
-  const GreetConnecMentAndUniverse = () => {
-    /**
-     * we want such a tree for our text:
-     * <div>
-     *   <span>Hello, <b>ConnecMent</b>!</span>
-     *   <span>Hello, <b>Universe</b>!</span>
-     * </div>
-     */
-    return createElement('div', [], [
-      createElement(Greet, [{ name: 'ConnecMent' }], []),
-      createElement(Greet, [{ name: 'Universe' }], []),
-    ]);
-  }
-  
-  render(createElement(
-    GreetConnecMentAndUniverse,
+  return createElement(
+    "span",
+    [{ class: "awesome-class" }],
+    ["Hello, ", createElement("b", [], props.name), "!"]
+  );
+};
+
+// another custom type, which uses the previous custom type
+const GreetConnecMentAndUniverse = () => {
+  /**
+   * we want such a tree for our text:
+   * <div>
+   *   <span>Hello, <b>ConnecMent</b>!</span>
+   *   <span>Hello, <b>Universe</b>!</span>
+   * </div>
+   */
+  return createElement(
+    "div",
     [],
-    [],
-  ), document.getElementById('app-root'));
+    [
+      createElement(Greet, [{ name: "ConnecMent" }], []),
+      createElement(Greet, [{ name: "Universe" }], []),
+    ]
+  );
+};
+
+render(
+  createElement(GreetConnecMentAndUniverse, [], []),
+  document.getElementById("app-root")
+);
