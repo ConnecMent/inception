@@ -18,27 +18,26 @@ const createElement = (elementType, props, children) => {
   };
 
   if (typeof elementType == "string") {
+    // created simple element
     element.type = elementType;
     element.props = props;
     element.children = children;
   } else if (typeof elementType == "function") {
+    // get return element and merge with origin parameter
     const returnElement = elementType();
     element.type = returnElement.type;
-    console.log(returnElement);
-    if (!returnElement.props || !props ) {
-      console.log("ds");
-    } else {
-      element.props = returnElement.props.concat(props);
-    }
+    element.props = {
+      ...returnElement.props,
+      ...props,
+    };
     element.children = returnElement.children.concat(children);
   } else {
-    // finalType = elementType();
+    console.error("createElement: Error in Input");
   }
   return element;
 };
 
-const mmd = (peo) =>
-  createElement("b", [], ["dsffs", "dsfssdf"]);
+const mmd = (peo) => createElement("divs", [], ["dsffs", "dsfssdf"]);
 
 console.log(createElement(mmd, [{ mmddd: "dsd" }], ["ffg"]));
 
