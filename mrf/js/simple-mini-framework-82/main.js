@@ -26,9 +26,10 @@ const createElement = (elementType, props, children) => {
     // get return element and merge with origin parameter
     const returnElement = elementType(...props);
     element.type = returnElement.type;
-    element.props = { 
+    element.props = {
       ...returnElement.props[0],
-      ...props[0]};
+      ...props[0],
+    };
     element.children = returnElement.children.concat(children);
   } else {
     console.error("createElement: Error in Input");
@@ -42,7 +43,25 @@ const createElement = (elementType, props, children) => {
  * @param domNode a node to render the element into
  */
 const render = (element, domNode) => {
-  // implement it here
+  // const element = {
+  //   type: "",
+  //   props: [],
+  //   children: [],
+  // };
+
+  // create a element with dom
+  const master = document.createElement(element.type);
+  domNode.appendChild(master);
+
+  // set attribute from props
+  for (const [propsName, propsValue] of Object.entries(element.props)) {
+    master.setAttribute(propsName, propsValue);
+  }
+
+  // set children
+  for (const it in element.children) {
+    // comming soon...
+  }
 };
 
 // Sample usage:
