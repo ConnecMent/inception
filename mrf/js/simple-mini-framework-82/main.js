@@ -26,7 +26,9 @@ const createElement = (elementType, props, children) => {
     // get return element and merge with origin parameter
     const returnElement = elementType(...props);
     element.type = returnElement.type;
-    element.props = returnElement.props;
+    element.props = { 
+      ...returnElement.props[0],
+      ...props[0]};
     element.children = returnElement.children.concat(children);
   } else {
     console.error("createElement: Error in Input");
