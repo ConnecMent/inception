@@ -24,22 +24,15 @@ const createElement = (elementType, props, children) => {
     element.children = children;
   } else if (typeof elementType == "function") {
     // get return element and merge with origin parameter
-    const returnElement = elementType();
+    const returnElement = elementType(...props);
     element.type = returnElement.type;
-    element.props = {
-      ...returnElement.props,
-      ...props,
-    };
+    element.props = returnElement.props;
     element.children = returnElement.children.concat(children);
   } else {
     console.error("createElement: Error in Input");
   }
   return element;
 };
-
-const mmd = (peo) => createElement("divs", [], ["dsffs", "dsfssdf"]);
-
-console.log(createElement(mmd, [{ mmddd: "dsd" }], ["ffg"]));
 
 /**
  * "render" an element into a domNode. In other words, get a JS object (= the element), which represents a tree of DOM nodes. Then create DOM elements for leaves and nodes, one by one, as you did in your dom manipulation tasks.
