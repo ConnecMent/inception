@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Post</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+
+    <style>
+
+        body{
+            margin: 20px 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+
+    <script src="addPost.js" defer></script>
+  </head>
+  <body>
+    <button onClick="window.location.href = './';">Cancel</button>
+
+    <label for="title"> Tilte</label><input id="title" type="text" />
+    <label for="body"> body</label><input id="body" type="text" />
+    <label for="author"> author</label><input id="author" type="text" />
+    <label for="authorID"> author ID</label
+    ><input id="authorID" type="number" />
+
+    <button onclick="submit()">Submit</button>
+  </body>
+</html>
