@@ -28,7 +28,6 @@ const createElement = (elementType, props, children) => {
     element.type = returnElement.type;
     element.props = {
       ...returnElement.props[0],
-      ...props[0],
     };
     element.children = returnElement.children.concat(children);
   } else {
@@ -59,8 +58,13 @@ const render = (element, domNode) => {
   }
 
   // set children
-  for (const it in element.children) {
-    // comming soon...
+  for (const it of element.children) {
+    if (typeof it == "object") {
+      render(it, master);
+    } else {
+      const nodeText = document.createTextNode(it);
+      master.appendChild(nodeText);
+    }
   }
 };
 
@@ -75,7 +79,7 @@ const Greet = (props) => {
   return createElement(
     "span",
     [{ class: "awesome-class" }],
-    ["Hello, ", createElement("b", [], props.name), "!"]
+    ["Hello, ", createElement("b", [], [props.name]), "!"]
   );
 };
 
