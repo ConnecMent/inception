@@ -2,14 +2,14 @@ const url = "https://jsonplaceholder.typicode.com";
 
 async function whoIsAuthor(userID) {
   const result = await fetch(`${url}/users/${userID}`).then((response) => {
-    response.json();
+    return response.json();
   });
   return result["name"];
 }
 
 async function getOnePost(ID) {
   const result = await fetch(`${url}/posts/${ID}`).then((response) => {
-    response.json();
+    return response.json();
   });
   const author = await whoIsAuthor(result["userId"]);
   result["name"] = author;

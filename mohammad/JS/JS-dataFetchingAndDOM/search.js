@@ -28,21 +28,21 @@ function addSearchedDiv(myTitle, myBody, myAuthor) {
 const url = "https://jsonplaceholder.typicode.com";
 async function whoIsAuthor(userID) {
   const result = await fetch(`${url}/users/${userID}`).then((response) => {
-    response.json();
+    return response.json();
   });
   return result["name"];
 }
 
 async function searchByAuthor(query) {
   const result = await fetch(`${url}/users?name=${query}`).then((response) => {
-    response.json();
+    return response.json();
   });
   if (response["length"] != 0) {
     const authorID = response[0]["id"];
 
     const resultPost = await fetch(`${url}/posts?userId=${authorID}`).then(
       (response) => {
-        response.json();
+        return response.json();
       }
     );
 
@@ -54,7 +54,7 @@ async function searchByAuthor(query) {
 
 async function searchByTitle(query) {
   const result = await fetch(`${url}/posts?title=${query}`).then((response) => {
-    response.json();
+    return response.json();
   });
 
   return result;
@@ -62,7 +62,7 @@ async function searchByTitle(query) {
 
 async function searchByBody(query) {
   const result = await fetch(`${url}/posts?body=${query}`).then((response) => {
-    response.json();
+    return response.json();
   });
 
   return result;
