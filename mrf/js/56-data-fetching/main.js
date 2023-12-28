@@ -77,7 +77,7 @@ function updateCard(masterID) {
   const newBody = window.prompt(`Editing: ${title}`, body);
 
   if (newBody != null) {
-    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${masterID}`, {
       method: "PUT",
       body: JSON.stringify({
         id: masterID,
