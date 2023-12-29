@@ -61,7 +61,7 @@ function deletePostDiv(divID) {
     fetch(`${url}/posts/${divID}`, {
       method: "DELETE",
     }).then((response) => {
-      document.removeChild(desiredDiv);
+      document.body.removeChild(desiredDiv);
       window.alert("The selected post deleted!");
     });
   }

@@ -13,10 +13,10 @@ function addSearchedDiv(myTitle, myBody, myAuthor) {
   title.textContent = myTitle;
 
   const body = document.createElement("p");
-  title.textContent = myBody;
+  body.textContent = myBody;
 
   const author = document.createElement("p");
-  title.textContent = myAuthor;
+  author.textContent = myAuthor;
 
   DIV.appendChild(title);
   DIV.appendChild(body);
@@ -37,8 +37,8 @@ async function searchByAuthor(query) {
   const result = await fetch(`${url}/users?name=${query}`).then((response) => {
     return response.json();
   });
-  if (response["length"] != 0) {
-    const authorID = response[0]["id"];
+  if (result["length"] != 0) {
+    const authorID = result[0]["id"];
 
     const resultPost = await fetch(`${url}/posts?userId=${authorID}`).then(
       (response) => {
@@ -82,7 +82,7 @@ async function apiSearch(query) {
         item.forEach(async function (element) {
           const authorName = await whoIsAuthor(element["userId"]);
           responseDiv.appendChild(
-            addCard(element["title"], element["body"], authorName)
+            addSearchedDiv(element["title"], element["body"], authorName)
           );
         });
       }
