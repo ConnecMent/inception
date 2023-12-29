@@ -4,82 +4,17 @@ function generateRandomColor(y, b) {
   return `rgb(${yellow}, ${yellow}, ${blue})`;
 }
 
-
-
-function onButtonClickSet() {
-  document.body.innerHTML = "";
-  const buttonTag = document.createElement("button");
-  buttonTag.textContent = "Reset";
-  buttonTag.addEventListener("click", firstPage);
-  document.body.appendChild(buttonTag);
-
-  const elm = { a: 0, b: 1, c: 2, d: 3, f: 4, g: 5, h: 6, i: 7, j: 8 };
-  const divElements = [];
-  Object.keys(elm).forEach((element) => {
-    const div = document.createElement("div");
-    div.innerText = element;
-    divElements.push(div);
-  });
-
-  divElements["f"].style.width = "250px";
-  divElements["f"].style.height = "250px";
-
-  const container = document.createElement("div");
-
-  document.body.appendChild(divElements["a"]);
-  divElements["a"].appendChild(divElements["b"]);
-  divElements["g"].appendChild(divElements["c"]);
-  divElements["C"].appendChild(divElements["d"]);
-  divElements["b"].appendChild(divElements["g"]);
-  document.body.appendChild(divElements["f"]);
-  divElements["f"].appendChild(divElements["h"]);
-  divElements["f"].appendChild(divElements["i"]);
-  divElements["h"].appendChild(divElements["j"]);
-  divElements["a"].classList.add("container");
-  divElements["b"].classList.add("container");
-  divElements["C"].classList.add("container");
-  divElements["d"].classList.add("container");
-  divElements["g"].classList.add("container");
-  divElements["f"].classList.add("container");
-  divElements["h"].classList.add("container");
-  divElements["i"].classList.add("container");
-  divElements["j"].classList.add("container");
-
-  const subTree = Object.values(elm).map((x) => divElements[x]);
-
-  subTree.forEach((x) => {
-    if (
-      Array.from(divElements["f"].childNodes).includes(x) ||
-      Array.from(divElements["f"].childNodes).includes(x)
-    ) {
-      x.style.backgroundColor = generateRandomColor(0, 255);
-    } else {
-      x.style.backgroundColor = generateRandomColor(255, 0);
-    }
-  });
-  divElements["f"].style.backgroundColor = generateRandomColor(0, 255);
-}
+const elm = { a: 0, b: 1, c: 2, d: 3, e: 4, f: 5, g: 6, h: 7, i: 8, j: 9 };
 
 function firstState() {
-  const buttonTag = document.createElement("button");
-  buttonTag.textContent = "Click Me!";
-  buttonTag.addEventListener("click", onButtonClickSet);
-
-  document.body.appendChild(buttonTag);
-  const elm = { a: 0, b: 1, c: 2, d: 3, e: 4, f: 5, g: 6, h: 7 };
-
-  Object.keys(elm).forEach((element) => {
-    elm[element] = document.createElement("div");
-  });
-
   document.body.appendChild(elm["a"]);
   elm["a"].appendChild(elm["b"]);
   elm["b"].appendChild(elm["c"]);
   elm["c"].appendChild(elm["d"]);
   elm["b"].appendChild(elm["e"]);
-  elm["b"].appendChild(elm["f"]);
-  document.body.appendChild(elm["g"]);
-  elm["g"].appendChild(elm["h"]);
+  elm["b"].appendChild(elm["g"]);
+  document.body.appendChild(elm["f"]);
+  elm["f"].appendChild(elm["h"]);
 
   elm["a"].classList.add("container");
   elm["b"].classList.add("container");
@@ -91,12 +26,55 @@ function firstState() {
   elm["h"].classList.add("container");
 }
 
-function firstPage() {
+function dif() {
+  elm["b"].removeChild(elm["e"]);
+  elm["b"].removeChild(elm["c"]);
+  elm["g"].appendChild(elm["c"]);
+  elm["f"].appendChild(elm["i"]);
+  elm["h"].appendChild(elm["j"]);
+  elm["i"].classList.add("container");
+  elm["j"].classList.add("container");
+}
+function onButtonClickSet() {
   document.body.innerHTML = "";
+  const buttonTag = document.createElement("button");
+  buttonTag.textContent = "Reset";
+  buttonTag.addEventListener("click", firstPage);
+  document.body.appendChild(buttonTag);
+  Object.keys(elm).forEach((element) => {
+    elm[element] = document.createElement("div");
+    elm[element].textContent = element;
+  });
   firstState();
+  dif();
+  const newWidth = elm["f"].offsetWidth * 0.5;
+  elm["f"].style.width = newWidth + "px";
+  elm["f"].style.height = newWidth + "px";
+  const elements = Array.from(elm["a"].querySelectorAll(".container > div"));
+  elements.forEach((element) => {
+    const randomColor = generateRandomColor(255, 0);
+    element.style.backgroundColor = randomColor;
+  });
+  const f = generateRandomColor(0, 255);
+  elm["f"].style.backgroundColor = f;
+  const fElements = Array.from(elm["f"].querySelectorAll(".container > div"));
+  fElements.forEach((element) => {
+    const randomColor = generateRandomColor(0, 255);
+    element.style.backgroundColor = randomColor;
+  });
 }
 
-const reset = document.querySelector("#reset");
-reset.addEventListener("click", firstPage);
+function firstPage() {
+  document.body.innerHTML = "";
+  const buttonTag = document.createElement("button");
+  buttonTag.textContent = "Click Me!";
+  buttonTag.addEventListener("click", onButtonClickSet);
+  document.body.appendChild(buttonTag);
+  Object.keys(elm).forEach((element) => {
+    elm[element] = document.createElement("div");
+  });
+
+  firstState();
+}
 
 window.onload = firstPage;
