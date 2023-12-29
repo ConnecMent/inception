@@ -28,16 +28,14 @@ function power2(x) {
 // user object with first name and last name, both capitalized
 // e.g. getUser('hello', 'world') is { firstName: 'Hello', lastName: 'World' }
 function getUser(firstName, lastName) {
-  const newFirstName = firstName
+  firstName = firstName
     .slice(0, 1)
     .toUpperCase()
     .concat(firstName.slice(1).toLowerCase());
-  firstName = newFirstName;
-  const newLastName = lastName
+  lastName = lastName
     .slice(0, 1)
     .toUpperCase()
     .concat(lastName.slice(1).toLowerCase());
-  lastName = newLastName;
   return { firstName, lastName };
 }
 
@@ -90,11 +88,10 @@ function callFuncNTimes(func, n, ...funcParams) {
 
 // return true if parameter is false, false otherwise
 function isNil(param) {
-  if (param == true) {
-    return false;
-  } else {
-    return true;
-  }
+  // if (param == true) {
+  //   return false;
+  // } else {
+  return !param;
 }
 
 // call property in object
