@@ -1,8 +1,10 @@
-export function foo(): "hello" | 5;
-export const bar: "hello worldd";
-export function returnObject(): void;
-declare namespace _default {
-  let foo: string;
-  let bar: string;
-}
+export declare const foo: () => "hello" | 5;
+export declare const bar = "hello world";
+export declare const returnObject: () => {
+  foo: number;
+};
+declare const _default: {
+  foo: string;
+  bar: string;
+};
 export default _default;
