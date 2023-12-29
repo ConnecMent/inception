@@ -32,12 +32,13 @@ function getUser(firstName, lastName) {
     .slice(0, 1)
     .toUpperCase()
     .concat(firstName.slice(1).toLowerCase());
+  firstName = newFirstName;
   const newLastName = lastName
     .slice(0, 1)
     .toUpperCase()
     .concat(lastName.slice(1).toLowerCase());
-
-  return { newFirstName, newLastName };
+  lastName = newLastName;
+  return { firstName, lastName };
 }
 
 // greet someone!
