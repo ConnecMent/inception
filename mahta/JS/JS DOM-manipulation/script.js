@@ -36,17 +36,15 @@ function dif() {
   elm["j"].classList.add("container");
 }
 function onButtonClickSet() {
-  document.body.innerHTML = "";
-  const buttonTag = document.createElement("button");
-  buttonTag.textContent = "Reset";
-  buttonTag.addEventListener("click", firstPage);
-  document.body.appendChild(buttonTag);
-  Object.keys(elm).forEach((element) => {
-    elm[element] = document.createElement("div");
-    elm[element].textContent = element;
-  });
-  firstState();
-  dif();
+ const buttonTag = document.getElementsByTagName("button")[0];
+ buttonTag.textContent = "Reset";
+ buttonTag.addEventListener("click", firstPage);
+ Object.keys(elm).forEach((element) => {
+   const noode = document.createTextNode(element);
+   elm[element].appendChild(noode);
+ });
+ dif();
+
   const newWidth = elm["f"].offsetWidth * 0.5;
   elm["f"].style.width = newWidth + "px";
   elm["f"].style.height = newWidth + "px";
