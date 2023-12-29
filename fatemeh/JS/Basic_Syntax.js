@@ -37,7 +37,7 @@ function getUser(firstName, lastName) {
     .toUpperCase()
     .concat(lastName.slice(1).toLowerCase());
 
-  return newFirstName, newLastName;
+  return { newFirstName, newLastName };
 }
 
 // greet someone!
@@ -90,9 +90,9 @@ function callFuncNTimes(func, n, ...funcParams) {
 // return true if parameter is false, false otherwise
 function isNil(param) {
   if (param == true) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
