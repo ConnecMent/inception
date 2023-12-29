@@ -81,9 +81,9 @@ function logCurrentTime(x, n) {
 
 // higher order function: call the function in the parameters list
 // e.g. callFuncNTimes(flipACoin, 3) calls flipACoin 3 times
-function callFuncNTimes(func, n) {
+function callFuncNTimes(func, n, ...funcParams) {
   for (let i = 0; i < n; i++) {
-    func(n);
+    func(...funcParams);
   }
 }
 
@@ -99,7 +99,7 @@ function isNil(param) {
 // call property in object
 // e.g. in obj = { callableProp: function () { console.log('hello!') } }, callPropInObj(obj, 'callableProp') will log "hello!"
 function callPropInObj(object, propertyName) {
-  object[propertyName]();
+  object?.[propertyName]?.();
 }
 
 // if the email is gmail
@@ -114,8 +114,6 @@ function isGmail(email) {
 // duplicate array
 // e.g. duplicateArray([1,2,3]) is [1,2,3,1,2,3]
 function duplicateArray(Arr) {
-  let n = Arr.length;
-  for (let i = 0; i < n; i++) {
-    Arr.push(Arr[i]);
-  }
+  Arr = Arr.concat(Arr);
+  return Arr;
 }
