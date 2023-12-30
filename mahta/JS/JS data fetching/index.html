@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Posts App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form onsubmit="return false;">
+        <button
+          id="addPostButton"
+          type="button"
+          onclick="redirectToNewPostPage()"
+        >
+          Add post
+        </button>
+        <input type="text" id="searchInput" placeholder="Search" />
+        <button id="searchButton" onclick="performSearch()">Search</button>
+      </form>
+    </div>
+    <div id="posts-container"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
