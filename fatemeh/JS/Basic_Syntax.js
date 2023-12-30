@@ -22,7 +22,7 @@ function concat(stringA, stringB) {
 
 // 2^x = ?
 function power2(x) {
-  return x * x;
+  return 2 ** x;
 }
 
 // user object with first name and last name, both capitalized
@@ -62,7 +62,7 @@ function getNRandomNumbers(n, min, max) {
     resultArr[i] = Math.floor(Math.random() * (max - min) + min);
   }
 
-  return resultArr;
+  return resultArr.sort();
 }
 
 // log current time with a x seconds interval, for n seconds
@@ -115,3 +115,5 @@ function duplicateArray(Arr) {
   Arr = Arr.concat(Arr);
   return Arr;
 }
+
+logCurrentTime(3, 2);
