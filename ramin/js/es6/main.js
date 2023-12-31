@@ -13,11 +13,11 @@ function greet(someName="ConncMent") {
 
 // log any other arguments passed to the following function, without changing parameters
 // e.g. foo('hello', 'world', '!') should log 'world' and '!'
-function foo(bar) {
-    for( let i=1;i<arguments.length;++i){
-        process.stdout.write(`'${arguments[i]}' `);
-    }
+function foo(bar) {    
+    const [,...a] = arguments;
+    console.log(a);
 }
+
 
 // concat two arrays using spread operator
 function concatArrays(arr1, arr2) {
