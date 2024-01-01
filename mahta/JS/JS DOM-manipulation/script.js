@@ -45,7 +45,7 @@ function onButtonClickSet() {
  });
  dif();
 
-  const newWidth = elm["f"].offsetWidth * 0.5;
+  const newWidth = elm["f"].offsetWidth * 1.5;
   elm["f"].style.width = newWidth + "px";
   elm["f"].style.height = newWidth + "px";
   const elements = Array.from(elm["a"].querySelectorAll(".container > div"));
