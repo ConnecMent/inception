@@ -3,7 +3,6 @@ const url = "https://jsonplaceholder.typicode.com";
 function submit() {
   const title = document.getElementById("title").value;
   const body = document.getElementById("body").value;
-  const author = document.getElementById("author").value;
   const authorID = parseInt(document.getElementById("authorID").value);
 
   fetch(`${url}/posts`, {
