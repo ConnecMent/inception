@@ -69,13 +69,12 @@ function getNRandomNumbers(n, min, max) {
 function logCurrentTime(x, n) {
   let counter = 0;
   let intervalID = setInterval(() => {
-    if (counter == n) {
+    console.log("Time: " + new Date());
+    counter++;
+    if (counter === Math.floor(n / x)) {
       clearInterval(intervalID);
-    } else {
-      console.log(Date());
-      counter += 1;
     }
-  }, x * 1000); //this sets the speed of the animation
+  }, x * 1000);
 }
 
 // higher order function: call the function in the parameters list
