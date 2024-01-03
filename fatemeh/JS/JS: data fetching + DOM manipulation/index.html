@@ -26,6 +26,8 @@
       let dataArray = [];
 
       async function fetchData() {
+        let posts = "";
+
         document.getElementsByClassName("cancelButton")[0].style.display =
           "none";
 
@@ -36,9 +38,7 @@
         dataArray = data;
 
         for (let i = 0; i < 10; i++)
-          document.getElementsByClassName(
-            "posts"
-          )[0].innerHTML += `<div class=${i} id=child>
+          posts += `<div class=${i} id=child>
                         <h1>${dataArray[i]["title"]}</h1>
                         <h3>Author: ${dataArray[i]["userId"]}</h3>
                         <p>${dataArray[i]["body"]}</p>
@@ -47,9 +47,10 @@
                             <button class=delete${i} id=delete>Delete</button>
                         </div>
                         </div>`;
-        document.getElementsByClassName("posts")[0].innerHTML += `<div>
+        posts += `<div>
                             <button class=addPost>+ Add Post</button>
                         </div>`;
+        document.getElementsByClassName("posts")[0].innerHTML = posts;
 
         for (let i = 0; i < 10; i++) {
           const updateButton = document.querySelector(`.update${i}`);
