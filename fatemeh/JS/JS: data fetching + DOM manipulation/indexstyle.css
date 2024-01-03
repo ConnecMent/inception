@@ -1,0 +1,136 @@
+* {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+  margin: 15px;
+}
+.line {
+  border-color: #8bc5ec54;
+}
+#update {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #4158d0;
+  font-weight: bold;
+  color: white;
+}
+#delete {
+  border: none;
+  margin-left: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #b721ff;
+  font-weight: bold;
+  color: white;
+}
+#update:hover {
+  box-shadow: 0 0 10px 5px #aeceff;
+}
+#update:active {
+  background-color: #4159d073;
+}
+#delete:hover {
+  box-shadow: 0 0 10px 5px #db8fff;
+}
+#delete:active {
+  background-color: #b921ff5b;
+}
+#child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+#child h3 {
+  color: #384fc2c0;
+}
+#child h1 {
+  color: #384fc2;
+}
+.addPost {
+  color: #8bc5ec;
+  padding: 15px;
+  font-weight: bolder;
+  width: 100%;
+  height: 100%;
+  border-style: dashed;
+  border-width: 8px;
+  border-color: #8bc5ec;
+  font-size: xxx-large;
+  border-radius: 20px;
+}
+.addPost:hover {
+  color: white;
+  border: none;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+.addPost:active {
+  background-color: #8bc5ec6e;
+  background-image: linear-gradient(135deg, #8bc5ec79 0%, #9599e275 100%);
+}
+#child p {
+  color: #384fc2;
+  border-radius: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.Search {
+  margin: 15px;
+}
+.SearchBox {
+  font-size: 15px;
+  padding: 6px;
+  border: none;
+  border-radius: 25px;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+}
+.SearchBox::placeholder {
+  color: white;
+}
+.SearchBox:focus {
+  background-color: #8bc5ec6e;
+  background-image: linear-gradient(135deg, #8bc5ec75 0%, #9599e277 100%);
+}
+.SearchButton {
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  border-radius: 25px;
+  background-color: #9599e2;
+  margin-left: 10px;
+  height: 30px;
+}
+.SearchButton:active {
+  background-color: #8bc5ec6e;
+  background-image: linear-gradient(135deg, #8bc5ec79 0%, #9599e275 100%);
+}
+.cancelButton {
+  /* visibility: hidden; */
+  /* display: none; */
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  border-radius: 25px;
+  background-color: #9599e2;
+  margin-left: 10px;
+  height: 30px;
+}
+.cancelButton:active {
+  background-color: #8bc5ec6e;
+  background-image: linear-gradient(135deg, #8bc5ec79 0%, #9599e275 100%);
+}

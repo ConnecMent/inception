@@ -1,0 +1,97 @@
+.newPost {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+* {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  align-items: center;
+}
+form {
+  font-weight: bold;
+  font-size: 20px;
+  color: #4158d0;
+}
+
+button:hover {
+  box-shadow: 0 0 10px 5px white;
+}
+button:active {
+  background-color: #4159d08c;
+}
+.Title {
+  font-size: large;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.Author {
+  font-size: large;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.PostBody {
+  font-size: large;
+  padding: 5px;
+  width: 95.5%;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  height: 5rem;
+  border: none;
+  border-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.addPost {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #4158d0;
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  margin: 0.5rem;
+  width: 7rem;
+}
+.CancelB {
+  border: none;
+  margin-left: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #b721ff;
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  margin: 0.5rem;
+  width: 7rem;
+}
+.addPost:hover {
+  box-shadow: 0 0 10px 5px #aeceff;
+}
+.addPost:active {
+  background-color: #4159d073;
+}
+.CancelB:hover {
+  box-shadow: 0 0 10px 5px #db8fff;
+}
+.CancelB:active {
+  background-color: #b921ff5b;
+}
