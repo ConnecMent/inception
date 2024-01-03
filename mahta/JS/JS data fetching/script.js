@@ -12,6 +12,10 @@ function createPostElement(post) {
 
   const author = document.createElement("p");
   author.classList.add("post-author");
+  
+  // Display a pending state while fetching the author's name
+  author.textContent = "Author: Loading...";
+  
   fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
     .then((response) => response.json())
     .then((user) => {
@@ -39,9 +43,9 @@ function createPostElement(post) {
       updatedBody !== null &&
       updatedAuthorName !== null
     ) {
-      body.textContent = updatedBody;
-      title.textContent = updatedTitle;
-      author.textContent = `Author: ${updatedAuthorName}`;
+      body.textContent = "Updating post...";
+      title.textContent = "Updating post...";
+      author.textContent = "Updating post...";
 
       const updatedPost = {
         id: post.id,
@@ -77,6 +81,8 @@ function createPostElement(post) {
     const confirmed = confirm("Are you sure you want to delete this post?");
 
     if (confirmed) {
+      body.textContent = "Deleting post...";
+
       fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`, {
         method: "DELETE",
       })
@@ -102,6 +108,7 @@ function createPostElement(post) {
 
   return postContainer;
 }
+
 
 function redirectToNewPostPage() {
   window.location.href = "new-post.html";
